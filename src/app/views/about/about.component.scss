@@ -1,0 +1,102 @@
+.section {
+  max-width: 600px;
+  margin: auto;
+  padding: 100px 15px 0px 15px;
+}
+.hero__button a {
+  color: #282828;
+  text-decoration: none;
+}
+.hero__button {
+  position: fixed;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Montserrat, sans-serif;
+  color: #282828;
+  text-decoration: none;
+}
+.hero__button:hover a {
+  color: rgba(28, 28, 28, 0.6);
+}
+
+.hero__button-miros {
+  top: 20px;
+  left: 30px;
+}
+.hero__button-main {
+  top: 20px;
+  right: 30px;
+}
+.hero__button-marathons {
+  bottom: 20px;
+  left: 30px;
+}
+.hero__button-actions {
+  bottom: 20px;
+  right: 30px;
+}
+.article__first-block figure {
+  margin: auto;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+}
+.article__first-block figure:hover {
+  transform: scale(1.1);
+}
+.article__first-block figure img {
+  width: 100%;
+}
+.article__block {
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.article__block h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: Montserrat, sans-serif;
+}
+.article__block p {
+  width: 100%;
+  font-family: Raleway, sans-serif;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+.figure-center {
+  width: min-content;
+  margin: auto;
+}
+.article__block > a {
+  margin: auto;
+  color: #ff7171;
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+.article__block > a:hover {
+  color: rgba(256, 71, 71, 0.5);
+}
+.align-left {
+  text-align: left;
+}
+.article__block ul {
+  margin-bottom: 20px;
+}
+.article__block ul li {
+  font-family: Raleway, sans-serif;
+  list-style: disc;
+  margin-bottom: 10px;
+}
+.article__block > figure {
+  width: 90%;
+  max-width: 400px;
+  transition: 0.2s ease-in-out;
+}
+.article__block > figure:hover {
+  transform: scale(1.1);
+}
+.article__block > figure > img {
+  width: 100%;
+}

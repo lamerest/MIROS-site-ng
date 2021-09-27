@@ -1,1 +1,21 @@
-<p>register works!</p>
+<app-header></app-header>
+
+<div class="spacer"></div>
+
+<article class="card">
+    <h1>РЕГИСТРАЦИЯ</h1>
+    <form action="account/register">
+
+        <label>Логин </label>
+        <label>Пароль</label>
+        <label>Повторно введите пароль</label>
+        <p class="error"></p>
+        <ul class="form__notation">
+            <li>Минимум - 8 симовлов.</li>
+            <li>Должны содержаться буквы или спец.символы.</li>
+            <li>Пароли должны совпадать.</li>
+        </ul>
+        <a class="form__link" routerLink="login">Уже зарегистрированы?</a>
+        <input class="btn btn-large" type="submit" value="зарегистрироваться">
+    </form>
+</article>
