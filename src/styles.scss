@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,900&family=Raleway:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
 ::selection {
   background: #aef8ff;
   color: black;
@@ -38,6 +41,13 @@ ul {
 }
 a {
   text-decoration: none;
+}
+h1, h2, h3 {
+  font-family: var(--header);
+  text-align: center;
+}
+p {
+  line-height: 1.5;
 }
 form {
   width: 500px;
