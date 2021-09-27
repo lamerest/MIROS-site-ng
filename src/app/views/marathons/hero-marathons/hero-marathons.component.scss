@@ -1,0 +1,61 @@
+.hero {
+    padding-top: 70px;
+    margin-bottom: -5px;
+    position: relative;
+  }
+  .hero__text-block {
+    position: absolute;
+    top: 150px;
+    left: 80px;
+  }
+  .hero__header {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 59px;
+    /* identical to box height */
+  
+    text-align: left;
+  
+    color: #b4ffbb;
+  }
+  .hero__text {
+    width: 400px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: justify;
+    color: #282828;
+  
+    margin: 15px 0 30px;
+  }
+  
+  .hero__link {
+    cursor: pointer;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    position: relative;
+  
+    color: #b4ffbb;
+  }
+  .hero__link::after {
+    display: block;
+    content: "";
+    background: url("../../../../assets/img/Arrow\ green.png") center no-repeat;
+    min-width: 20px;
+    min-height: 40px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-40%) translateX(150%);
+  }
+  .hero img {
+    width: 100%;
+    object-fit: cover;
+  }
