@@ -8,6 +8,10 @@ import { AboutComponent } from './views/about/about.component';
 import { MarathonsComponent } from './views/marathons/marathons.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { BlogComponent } from './views/blog/blog.component';
+import { ArticleComponent } from './views/blog/article/article.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { RegisterComponent } from './views/register/register.component';
     AboutComponent,
     MarathonsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent,
+    FooterComponent,
+    BlogComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
