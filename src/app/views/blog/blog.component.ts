@@ -20,8 +20,4 @@ export class BlogComponent implements OnInit {
     console.log(this.articles[0].preview.formats.small.url);
     
   }
-
-  getPreviewUrl(article: IArticle): string {
-    return environment.serverUrl + article.preview.formats.small.url;
-  }
 }
