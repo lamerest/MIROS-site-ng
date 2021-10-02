@@ -18,6 +18,11 @@ import { HeroComponent } from './views/main-page/hero/hero.component';
 import { AboutSectionComponent } from './views/main-page/about-section/about-section.component';
 import { HeroMarathonsComponent } from './views/marathons/hero-marathons/hero-marathons.component';
 import { CallbackComponent } from './components/popups/callback/callback.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ArticleResolver } from './resolvers/article.resolver';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { environment } from 'src/environments/environment';
+import { ArticleCardComponent } from './components/article-card/article-card.component';
 
 @NgModule({
   declarations: [
@@ -37,12 +42,24 @@ import { CallbackComponent } from './components/popups/callback/callback.compone
     AboutSectionComponent,
     HeroMarathonsComponent,
     CallbackComponent,
+    ArticleCardComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule
+    AppRoutingModule,
+    MarkdownModule.forRoot(
+      { 
+        loader: HttpClient,
+        markedOptions: {
+          provide: MarkedOptions,
+          useValue: {
+            baseUrl: environment.serverUrl
+          }
+        } 
+      })
   ],
-  providers: [],
+  providers: [ArticleResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

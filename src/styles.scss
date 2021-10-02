@@ -30,7 +30,7 @@
   --primary-green: #b4ffbb;
   --primary-black: #282828;
 }
-.body {
+body {
   overflow-x: hidden;
 }
 * {
@@ -48,6 +48,10 @@ h1, h2, h3 {
 }
 p {
   line-height: 1.5;
+  font-family: Raleway, sans-serif;
+}
+img {
+  width: 100%;
 }
 form {
   width: 500px;

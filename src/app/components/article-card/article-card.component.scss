@@ -1,0 +1,23 @@
+.article-card {
+    width: 350px;
+    height: 450px;
+    padding: 20px;
+    margin: 0 10px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--primary-green);
+    
+    h2 {
+        text-align: left;
+        text-transform: uppercase;
+        font-size: 1.4em;
+        padding: 10px 0;
+    }
+
+    img {
+        border-radius: 8px;
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    } 
+}

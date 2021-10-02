@@ -1,1 +1,18 @@
-<p>blog works!</p>
+<app-header></app-header>
+<section class="blog container">
+  <h1>Блог</h1>
+
+  <div class="blog__carousel-wrap carousel-wrap">
+    <div class="carousel-header">
+      <h3>Последние статьи</h3>
+      <img src="assets/img/Arrow.png" alt="Articles" />
+    </div>
+
+    <div class="blog__carousel carousel">
+      <app-article-card 
+        *ngFor="let article of articles" 
+        [article]="article">
+      </app-article-card>
+    </div>
+  </div>
+</section>
