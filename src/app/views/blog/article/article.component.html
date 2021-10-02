@@ -17,16 +17,15 @@
   </div>
 
   <main class="article__content">
-    <h1 class="article__title">{{ article.title }}</h1>
+    <h1 class="article__title">{{ article?.title }}</h1>
     <div class="article__categories">
-        <span *ngFor="let category of article.categories">{{ category.name }}</span>
+        <span *ngFor="let category of article?.categories">{{ category?.name }}</span>
     </div>
-    <markdown class="variable-binding" [data]="markdown"></markdown>
-    <p>{{ article.content }}</p>
+    <markdown class="variable-binding" [data]="article?.content"></markdown>
 
     <div class="article__footer">
-        <span>{{ article.date }}</span>
-        <span>{{ article.author }}</span>
+        <span>{{ article?.date }}</span>
+        <span>{{ article?.author }}</span>
     </div>
 
   </main>

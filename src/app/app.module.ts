@@ -18,9 +18,10 @@ import { HeroComponent } from './views/main-page/hero/hero.component';
 import { AboutSectionComponent } from './views/main-page/about-section/about-section.component';
 import { HeroMarathonsComponent } from './views/marathons/hero-marathons/hero-marathons.component';
 import { CallbackComponent } from './components/popups/callback/callback.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ArticleResolver } from './resolvers/article.resolver';
-import { MarkdownModule } from 'ngx-markdown';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,16 @@ import { MarkdownModule } from 'ngx-markdown';
     HttpClientModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(
+      { 
+        loader: HttpClient,
+        markedOptions: {
+          provide: MarkedOptions,
+          useValue: {
+            baseUrl: environment.serverUrl
+          }
+        } 
+      })
   ],
   providers: [ArticleResolver],
   bootstrap: [AppComponent]
