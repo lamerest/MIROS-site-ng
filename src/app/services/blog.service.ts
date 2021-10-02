@@ -1,19 +1,29 @@
 import { Injectable } from '@angular/core';
+import { IArticle, ICategory } from '../models/blog';
 import { BaseRequestService } from './base-request.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
-  baseUrl = "articles"
+  articleUrl = "articles"
+  categoryUrl = "categories"
 
   constructor(private requestService: BaseRequestService) { }
 
-  getArticles() {
-    return this.requestService.get(this.baseUrl)
+  async getArticles(): Promise<IArticle[]> {
+    return await this.requestService.get(this.articleUrl)
   }
 
-  getArticleById(articleId: number) {
-    return this.requestService.get(this.baseUrl + articleId)
+  async getArticleById(articleId: number): Promise<IArticle> {
+    return await this.requestService.get(this.articleUrl + "/" + articleId)
+  }
+
+  async getCategories(): Promise<ICategory[]> {
+    return await this.requestService.get(this.categoryUrl)
+  }
+
+  async getCategoryById(categoryId: number): Promise<ICategory> {
+    return await this.requestService.get(this.categoryUrl + "/" + categoryId)
   }
 }
