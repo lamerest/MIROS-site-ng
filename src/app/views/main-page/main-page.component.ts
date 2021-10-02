@@ -16,18 +16,10 @@ export class MainPageComponent implements OnInit {
     } else if (!this.isHeaderVisible && this.scrollEventsCounter > 60) {
       this.isHeaderVisible = true
     }
-    if (this.hero) {
-      console.log(this.hero.nativeElement.scrollHeight);
-      
-      console.log(this.hero);
-    }
   } 
   
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.hero);
-    
-  }
+  ngOnInit(): void { }
 
 }
