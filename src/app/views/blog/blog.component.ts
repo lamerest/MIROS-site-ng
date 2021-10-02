@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IArticle } from 'src/app/models/blog';
+import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
+  articles: IArticle[] = []
 
-  constructor() { }
+  constructor(
+    private blogService: BlogService,
+  ) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.articles = await this.blogService.getArticles()
   }
-
 }
