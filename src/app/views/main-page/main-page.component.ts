@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-main-page',
@@ -8,6 +8,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class MainPageComponent implements OnInit {
   scrollEventsCounter = 0
   isHeaderVisible = false
+  @ViewChild('hero') hero: HTMLElement | null = null;
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event: any){
     if (this.scrollEventsCounter <= 60) {
@@ -20,6 +21,8 @@ export class MainPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.hero);
+    
   }
 
 }
