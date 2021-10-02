@@ -1,8 +1,14 @@
 <article [routerLink]="'/article/' + article.id" class="article-card">
     <img [src]="getPreviewUrl(article)" alt="">
+    <div class="article-card__categories">
+        <span class="article-card__category" *ngFor="let category of article.categories">{{ category.name }}</span>
+    </div>
     <h2>{{ article.title }}</h2>
     <div class="article-card__text-wrap">
         <markdown [data]="article.previewText"></markdown>
     </div>
-    <span>{{ article.author }}</span>
+    <div class="article-card__reactions">
+        <img (click)="like()" src="assets/img/Heart.png" alt="">
+        <img (click)="dislike()"src="assets/img/Broken heart.png" alt="">
+    </div>
 </article>

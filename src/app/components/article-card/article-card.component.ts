@@ -18,4 +18,12 @@ export class ArticleCardComponent implements OnInit {
   getPreviewUrl(article: IArticle): string {
     return environment.serverUrl + article.preview.formats.small.url;
   }
+
+  like() {
+    console.log("like");
+  }
+
+  dislike() {
+    console.log("dislike");
+  }
 }
