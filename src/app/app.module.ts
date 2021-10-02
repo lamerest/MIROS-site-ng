@@ -18,6 +18,9 @@ import { HeroComponent } from './views/main-page/hero/hero.component';
 import { AboutSectionComponent } from './views/main-page/about-section/about-section.component';
 import { HeroMarathonsComponent } from './views/marathons/hero-marathons/hero-marathons.component';
 import { CallbackComponent } from './components/popups/callback/callback.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ArticleResolver } from './resolvers/article.resolver';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -39,10 +42,12 @@ import { CallbackComponent } from './components/popups/callback/callback.compone
     CallbackComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule
+    AppRoutingModule,
+    MarkdownModule.forRoot()
   ],
-  providers: [],
+  providers: [ArticleResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

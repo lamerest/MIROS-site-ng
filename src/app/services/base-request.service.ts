@@ -12,6 +12,7 @@ export class BaseRequestService {
     public http: HttpClient, //public _snackBar: MatSnackBar,
     private localStorage: LocalStorageService,
   ) {}
+  
   get<T>(url: string, headersObj?: any, useDataWrapper = true): Promise<T> {
     return this.request(url, "GET", headersObj, null, useDataWrapper);
   }
