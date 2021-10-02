@@ -51,7 +51,14 @@ export interface IArticle {
   }
 
   export interface ICategory {
-
+    id: number,
+    name: string,
+    locale: LanguageCode,
+    published_at: string,
+    created_at: string,
+    updated_at: string,
+    articles: IArticle[],
+    localizations: ILocalization[]
   }
 
   export interface ILocalization {
