@@ -1,7 +1,22 @@
-<section>
-    <article *ngFor="let article of articles">
-        <h1>{{ article.title }}</h1>
-        <p>{{ article.content }}</p>
-        <span>{{ article.author }}</span>
-    </article>
+<app-header></app-header>
+<section class="blog container">
+    <h1>Блог</h1>
+
+    <div class="blog__carousel-wrap carousel-wrap">
+        <div class="carousel-header">
+            <h3>Последние статьи</h3>
+        <img src="assets/img/Arrow.png" alt="Articles">
+        </div>
+        
+        <div class="blog__carousel carousel">
+            <article *ngFor="let article of articles" [routerLink]="'/article/' + article.id" class="article-card">
+                <img [src]="getPreviewUrl(article)" alt="">
+                <h2>{{ article.title }}</h2>
+                <div class="article-card__text-wrap">
+                    <markdown [data]="article.previewText"></markdown>
+                </div>
+                <span>{{ article.author }}</span>
+            </article>
+        </div>
+    </div>
 </section>

@@ -4,6 +4,7 @@ export interface IArticle {
     title: string,
     date: string,
     author: string,
+    previewText: string,
     locale: LanguageCode,
     published_at: string,
     created_at: string,

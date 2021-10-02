@@ -53,6 +53,19 @@
             height: 30px;
         }
     }
+    &__categories {
+        padding: 20px 0;
+        &-text {
+            font-weight: 600;
+        }
+    }
+    &__category {
+        padding: 8px 20px;
+        background-color: var(--primary-green);
+        border-radius: 20px;
+        margin-right: 8px;
+        cursor: pointer;
+    }
     .article__footer {
         display: flex;
         justify-content: space-between;

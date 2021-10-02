@@ -6,8 +6,8 @@ import { BaseRequestService } from './base-request.service';
   providedIn: 'root'
 })
 export class BlogService {
-  articleUrl = "articles"
-  categoryUrl = "categories"
+  articleUrl = "/articles"
+  categoryUrl = "/categories"
 
   constructor(private requestService: BaseRequestService) { }
 

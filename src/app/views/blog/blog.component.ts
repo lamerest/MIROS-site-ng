@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IArticle } from 'src/app/models/blog';
 import { BlogService } from 'src/app/services/blog.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-blog',
@@ -16,5 +17,11 @@ export class BlogComponent implements OnInit {
 
   async ngOnInit() {
     this.articles = await this.blogService.getArticles()
+    console.log(this.articles[0].preview.formats.small.url);
+    
+  }
+
+  getPreviewUrl(article: IArticle): string {
+    return environment.serverUrl + article.preview.formats.small.url;
   }
 }
