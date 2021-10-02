@@ -5,6 +5,8 @@ export interface IArticle {
     date: string,
     author: string,
     previewText: string,
+    likes: number,
+    dislikes: number,
     locale: LanguageCode,
     published_at: string,
     created_at: string,

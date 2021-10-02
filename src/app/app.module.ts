@@ -22,6 +22,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ArticleResolver } from './resolvers/article.resolver';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { environment } from 'src/environments/environment';
+import { ArticleCardComponent } from './components/article-card/article-card.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { environment } from 'src/environments/environment';
     AboutSectionComponent,
     HeroMarathonsComponent,
     CallbackComponent,
+    ArticleCardComponent,
   ],
   imports: [
     HttpClientModule,

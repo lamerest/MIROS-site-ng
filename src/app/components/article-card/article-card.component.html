@@ -1,0 +1,8 @@
+<article [routerLink]="'/article/' + article.id" class="article-card">
+    <img [src]="getPreviewUrl(article)" alt="">
+    <h2>{{ article.title }}</h2>
+    <div class="article-card__text-wrap">
+        <markdown [data]="article.previewText"></markdown>
+    </div>
+    <span>{{ article.author }}</span>
+</article>
