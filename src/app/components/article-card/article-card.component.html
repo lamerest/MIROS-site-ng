@@ -8,7 +8,11 @@
         <markdown [data]="article.previewText"></markdown>
     </div>
     <div class="article-card__reactions">
-        <img (click)="like()" src="assets/img/Heart.png" alt="">
-        <img (click)="dislike()"src="assets/img/Broken heart.png" alt="">
+        <figure (click)="like(); $event.stopPropagation()">
+            <img src="assets/img/Heart.png" alt="">
+        </figure>
+        <figure (click)="dislike(); $event.stopPropagation()">
+            <img src="assets/img/Broken heart.png" alt="">
+        </figure>
     </div>
 </article>
