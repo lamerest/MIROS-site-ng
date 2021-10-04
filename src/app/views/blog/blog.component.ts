@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class BlogComponent implements OnInit {
   articles: IArticle[] = []
+  firstArticles: IArticle[] = []
 
   constructor(
     private blogService: BlogService,
@@ -17,7 +18,7 @@ export class BlogComponent implements OnInit {
 
   async ngOnInit() {
     this.articles = await this.blogService.getArticles()
+    this.firstArticles = this.articles.splice(0, 3)
     console.log(this.articles[0].preview.formats.small.url);
-    
   }
 }

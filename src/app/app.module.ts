@@ -23,6 +23,7 @@ import { ArticleResolver } from './resolvers/article.resolver';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { environment } from 'src/environments/environment';
 import { ArticleCardComponent } from './components/article-card/article-card.component';
+import { ArticlesListComponent } from './components/articles-list/articles-list.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ArticleCardComponent } from './components/article-card/article-card.com
     HeroMarathonsComponent,
     CallbackComponent,
     ArticleCardComponent,
+    ArticlesListComponent,
   ],
   imports: [
     HttpClientModule,

@@ -1,0 +1,21 @@
+.grid {
+    display: grid;
+
+    &__article {
+        &:nth-child(5n+1) {
+            grid-column: 1 / span 2;
+        } 
+        &:nth-child(5n+2) {
+            grid-column: 3 / span 2;
+        }
+        &:nth-child(5n+3) {
+            grid-column: 5 / span 2;
+        }
+        &:nth-child(5n+4) {
+            grid-column: 1 / span 3;
+        }
+        &:nth-child(5n+5) {
+            grid-column: 4 / span 3;
+        }
+    }
+}

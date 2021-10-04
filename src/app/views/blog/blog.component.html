@@ -5,14 +5,20 @@
   <div class="blog__carousel-wrap carousel-wrap">
     <div class="carousel-header">
       <h3>Последние статьи</h3>
-      <img src="assets/img/Arrow.png" alt="Articles" />
+      <!-- <img src="assets/img/Arrow.png" alt="Articles" /> -->
     </div>
 
     <div class="blog__carousel carousel">
       <app-article-card 
-        *ngFor="let article of articles" 
+        *ngFor="let article of firstArticles" 
         [article]="article">
       </app-article-card>
     </div>
   </div>
+
+  <section class="blog__articles-list container">
+    <app-articles-list
+      [articles]="articles"
+    ></app-articles-list>
+  </section>
 </section>

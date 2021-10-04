@@ -1,5 +1,10 @@
 .blog {
     padding-top: 100px;
+
+    &__articles-list {
+        margin: auto;
+        max-width: 1200px
+    }
 }
 .carousel {
     &-wrap {
