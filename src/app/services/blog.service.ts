@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { LocalStorageService } from '../common/local-storage';
 import { IArticle, ICategory } from '../models/blog';
 import { BaseRequestService } from './base-request.service';
 
@@ -9,10 +10,14 @@ export class BlogService {
   articleUrl = "/articles"
   categoryUrl = "/categories"
 
-  constructor(private requestService: BaseRequestService) { }
+  constructor(
+    private requestService: BaseRequestService,
+    private localStorage: LocalStorageService,
+  ) { }
 
   async getArticles(): Promise<IArticle[]> {
-    return await this.requestService.get(this.articleUrl)
+    let lang = this.localStorage.getItem('locale')
+    return await this.requestService.get(`${this.articleUrl}?locale_eq=${lang? lang : "en"}`)
   }
 
   async getArticleById(articleId: number): Promise<IArticle> {

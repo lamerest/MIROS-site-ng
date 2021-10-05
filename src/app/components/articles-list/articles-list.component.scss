@@ -1,7 +1,12 @@
 .grid {
     display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px 12px;
 
     &__article {
+        height: max-content;
+
+        width: 100%;
         &:nth-child(5n+1) {
             grid-column: 1 / span 2;
         } 

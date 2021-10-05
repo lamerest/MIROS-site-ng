@@ -1,0 +1,27 @@
+.header-wrap {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+
+    &__header {
+        display: flex;
+        align-items: center;
+    }
+}
+h2 {
+    font-size: 1.7em;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+.main {
+    color: black;
+    -webkit-text-stroke-width: unset;
+    -webkit-text-stroke-color: unset;
+}
+.dash {
+    width: 15px;
+    height: 3px;
+    background-color: black;
+    margin: 0 10px;
+}

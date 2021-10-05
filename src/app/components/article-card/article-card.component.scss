@@ -1,8 +1,6 @@
 .article-card {
-    max-width: 355px;
     height: 485px;
     padding: 20px 20px 15px;
-    margin: 0 10px;
     border-radius: 12px;
     overflow: hidden;
     background-color: var(--primary-black);
@@ -13,6 +11,7 @@
         padding: 10px 0;
         display: flex;
     }
+
     &__category {
         width: min-content;
         padding: 5px 10px;
