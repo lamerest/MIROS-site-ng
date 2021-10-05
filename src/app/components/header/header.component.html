@@ -12,8 +12,8 @@
   </nav>
 
   <div class="header__language">
-    <select name="language" value="EN">
-      <option value="en">RU</option>
+    <select (change)="changeLanguage(language.value)" [value]="lang" name="language" value="EN" #language>
+      <option value="en">EN</option>
       <option value="fr">FR</option>
       <option value="ru-Ru">RU</option>
     </select>

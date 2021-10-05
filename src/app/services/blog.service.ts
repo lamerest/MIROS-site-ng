@@ -17,7 +17,7 @@ export class BlogService {
 
   async getArticles(): Promise<IArticle[]> {
     let lang = this.localStorage.getItem('locale')
-    return await this.requestService.get(`${this.articleUrl}?locale_eq=${lang? lang : "en"}`)
+    return await this.requestService.get(`${this.articleUrl}?locale=${lang? lang : "en"}`)
   }
 
   async getArticleById(articleId: number): Promise<IArticle> {
