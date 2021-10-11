@@ -25,6 +25,7 @@ import { environment } from 'src/environments/environment';
 import { ArticleCardComponent } from './components/article-card/article-card.component';
 import { ArticlesListComponent } from './components/articles-list/articles-list.component';
 import { RepeatedHeaderComponent } from './components/repeated-header/repeated-header.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { RepeatedHeaderComponent } from './components/repeated-header/repeated-h
     HttpClientModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
+    FormsModule,
     MarkdownModule.forRoot(
       { 
         loader: HttpClient,

@@ -12,10 +12,10 @@
   </nav>
 
   <div class="header__language">
-    <select (change)="changeLanguage(language.value)" class="header__language-select" [value]="lang" name="language" value="EN" #language>
-      <option value="en">EN</option>
-      <option value="fr">FR</option>
-      <option value="ru-RU">RU</option>
+    <select [(ngModel)]="lang" (change)="changeLanguage()" class="header__language-select" name="language">
+      <option [value]="LanguageCode.en">EN</option>
+      <option [value]="LanguageCode.fr">FR</option>
+      <option [value]="LanguageCode.ru">RU</option>
     </select>
   </div>
 </header>

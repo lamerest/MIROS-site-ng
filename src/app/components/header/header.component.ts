@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LocalStorageService } from 'src/app/common/local-storage';
 import { LanguageCode } from 'src/app/models/blog';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-header',
@@ -9,17 +10,18 @@ import { LanguageCode } from 'src/app/models/blog';
 })
 export class HeaderComponent implements OnInit {
   @Input() isHidden = false
-  lang: LanguageCode | string = LanguageCode.ru
+  lang: LanguageCode = LanguageCode.ru
+  LanguageCode = LanguageCode
   
   constructor(
-    private localStorage: LocalStorageService,
+    private languageService: LanguageService
   ) { }
 
   ngOnInit(): void {
-    this.lang = this.localStorage.getItem("locale") || LanguageCode.ru
+    this.lang = this.languageService.getLanguage()
   }
 
-  changeLanguage(lang: LanguageCode | string) {
-    this.localStorage.setItem("locale", lang)
+  changeLanguage() {
+    this.languageService.setLanguage(this.lang)
   }
 }
