@@ -20,7 +20,7 @@ export class BlogComponent implements OnInit {
 
   async ngOnInit() {
     this.articles = await this.blogService.getArticles()
-    this.firstArticles = this.articles.splice(0, 3)
+    this.firstArticles = this.articles.splice(0, 4)
     console.log(this.articles[0].preview.formats.small.url);
     console.log("Window object:", this.languageService.getWindow());
     

@@ -14,6 +14,19 @@
   &-hidden {
     top: -100px;
   }
+
+  &__language {
+    &-select {
+      padding: 10px 15px;
+      border-radius: 30px;
+      outline: none;
+      background-color: #EEE;
+      font-size: 1.0em;
+      margin-right: 30px;
+      font-weight: 600;
+    }
+     
+  }
 }
 .header__logo {
   justify-self: start;
