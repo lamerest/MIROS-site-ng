@@ -12,6 +12,10 @@ export class BlogComponent implements OnInit {
   articles: IArticle[] = []
   firstArticles: IArticle[] = []
 
+  subscriber = { 
+    next: (x: any) => { this.getArticles() } 
+  }
+
   constructor(
     private blogService: BlogService,
     private languageService: LanguageService,
@@ -19,7 +23,7 @@ export class BlogComponent implements OnInit {
 
   async ngOnInit() {
     this.getArticles()
-    this.languageService.langSubject.subscribe({ next: x => { console.log(x); this.getArticles() } }) 
+    this.languageService.langSubject.subscribe(this.subscriber) 
   }
 
   async getArticles() {
