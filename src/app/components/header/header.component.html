@@ -4,18 +4,23 @@
   </div>
   <nav class="header__menu">
     <ul>
-      <li><a routerLink="/">Главная</a></li>
-      <li><a routerLink="/marathons">Марафоны</a></li>
-      <li><a routerLink="/blog">Блог</a></li>
-      <li><a routerLink="/about">О нас</a></li>
+      <li><a routerLink="/">{{ content.menu.main }}</a></li>
+      <li><a routerLink="/marathons">{{ content.menu.marathons }}</a></li>
+      <li><a routerLink="/blog">{{ content.menu.blog }}</a></li>
+      <li><a routerLink="/about">{{ content.menu.about }}</a></li>
     </ul>
   </nav>
 
   <div class="header__language">
     <select [(ngModel)]="lang" (change)="changeLanguage()" class="header__language-select" name="language">
-      <option [value]="LanguageCode.en">EN</option>
+      <option [value]="lang.languageCode" *ngFor="let lang of content.languages">
+        {{ lang.languageName }}
+        <!-- <img [src]="lang.languageImage?.url"> -->
+      </option>
+      
+      <!-- <option [value]="LanguageCode.en">EN</option>
       <option [value]="LanguageCode.fr">FR</option>
-      <option [value]="LanguageCode.ru">RU</option>
+      <option [value]="LanguageCode.ru">RU</option> -->
     </select>
   </div>
 </header>

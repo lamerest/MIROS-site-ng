@@ -25,6 +25,7 @@ export class MainPageComponent implements OnInit {
   langSubscription!: Subscription;
   subscriber = {
     next: () => {
+      console.log("Changing locale");
       this.changeLocalization();
     },
   };
@@ -44,8 +45,8 @@ export class MainPageComponent implements OnInit {
     private contentService: ContentService
   ) {}
 
-  ngOnInit(): void {
-    this.contentService.getMainPage();
+  async ngOnInit() {
+    this.content = await this.contentService.getMainPage();
     this.langSubscription = this.languageService.langSubject.subscribe(
       this.subscriber
     );

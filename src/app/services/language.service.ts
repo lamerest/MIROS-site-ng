@@ -14,7 +14,7 @@ export class LanguageService {
   //   complete: () => console.log("complete")
   // }
 
-  lang = LanguageCode.ru
+  lang = LanguageCode.standardLanguage
 
   langSubject = new Subject<LanguageCode>()
   
@@ -26,14 +26,23 @@ export class LanguageService {
     return window
   }
 
-  setLanguage(lang: LanguageCode) {
-    this.lang = lang
-    this.localStorage.setItem("locale", this.lang)
-    this.langSubject.next(this.lang)
+  setLanguage(lang: LanguageCode | null | undefined) {
+    if (lang != null) {
+      this.lang = lang
+      this.localStorage.setItem("locale", this.lang)
+      this.langSubject.next(this.lang)
+    }
   }
 
   getLanguage(): LanguageCode {
-    this.lang = this.localStorage.getItem("locale") as LanguageCode
+    let lang = this.localStorage.getItem("locale")
+
+    if (lang == null)  {
+      this.localStorage.setItem("locale", LanguageCode.standardLanguage)
+      lang = LanguageCode.standardLanguage
+    }
+
+    this.lang = lang as LanguageCode
     return this.lang
   }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IFooter } from 'src/app/models/pages';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
+  @Input() content!: IFooter
+  
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  async ngOnInit() { }
 }
