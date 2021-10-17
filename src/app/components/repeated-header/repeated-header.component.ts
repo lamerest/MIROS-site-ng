@@ -12,6 +12,7 @@ export class RepeatedHeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.header = this.header.toUpperCase()
   }
 
 }

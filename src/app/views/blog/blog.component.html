@@ -1,9 +1,9 @@
 <section class="blog container">
-  <h1>Блог</h1>
+  <h1>{{ content.title }}</h1>
 
   <div class="blog__carousel-wrap carousel-wrap">
     <div class="carousel-header">
-      <h3>Последние статьи</h3>
+      <h3>{{ content.lastArticles }}</h3>
       <!-- <img src="assets/img/Arrow.png" alt="Articles" /> -->
     </div>
 
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <app-repeated-header [header]="'СТАТЬИ'"></app-repeated-header>
+  <app-repeated-header [header]="content.articles"></app-repeated-header>
 
   <section class="blog__articles-list container">
     <app-articles-list

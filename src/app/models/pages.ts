@@ -25,11 +25,36 @@ export interface IAboutPage {
 }
 
 export interface IBlogPage {
-    
+    title: string,
+    lastArticles: string,
+    articles: string
 }
 
 export interface IMarathonsPage {
-    
+    id: number | string
+    welcomeHeader:	string
+    welcomeText:	string
+    welcomeSubtitle:	string
+    firstBlockHeader:	string
+    firstBlockSubtitle:	string
+    firstBlockProgramHeader:	string
+    firstBlockProgramList:	string
+    firstBlockButtonText:	string
+    reasonsBLockHeader:	string
+    reasonsBlockFirst:	string
+    reasonsBlockSecond:	string
+    reasonsBlockThird:	string
+    whoBlockSubtitle:	string
+    whoBlockTitle:	string
+    stats:	IStat[]
+    motivationBlockSubtitle:	string
+    motivationBlockTitle:	string
+    motivationBlockButtonText:	string
+    localizations:	ILocalization[]
+    locale: LanguageCode
+
+    created_at: string,
+    updated_at: string,
 }
 
 export interface IHeader {
@@ -77,6 +102,12 @@ export interface IReview {
     videos:	IVideo[]
 }
 
+export interface IStat {
+    id: number
+    number:	number | string,
+    title:	string,
+    text:	string,
+}
 export interface IVideo {
     id:	number | string
     name:	string

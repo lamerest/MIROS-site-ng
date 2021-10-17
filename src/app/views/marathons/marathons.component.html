@@ -1,13 +1,13 @@
 <section>
-  <app-hero-marathons></app-hero-marathons>
+  <app-hero-marathons [content]="content"></app-hero-marathons>
 
   <main class="main">
     <figure><img src="assets/img/Marathons%20info.png" alt=""></figure>
     <div class="main__text-block">
 
         <div class="text-block__block">
-        <h2>Когда?</h2>
-        <h3 class="text-block__text-gray">следите за обновлениями в наших соцсетях</h3>
+        <h2>{{ content.firstBlockHeader }}</h2>
+        <h3 class="text-block__text-gray">{{ content.firstBlockSubtitle }}</h3>
 
             <div class="text-block__social-media-block">
             <div class="social-media">
@@ -23,31 +23,23 @@
       </div>
 
       <div class="text-block__block">
-        <h2>Программа марафона</h2>
-        <ul>
-          <li>Силовые тренировки</li>
-          <li>Растяжки</li>
-          <li>Онлайн и офлайн тренировки</li>
-          <li>Треккер вашего прогресса</li>
-          <li>Комментарии и советы от нашей команды</li>
-          <li>Новая полезная информация</li>
-          <li>Множество интерактивов и приятного общения :)</li>
-        </ul>
+        <h2>{{ content.firstBlockProgramHeader }}</h2>
+        <markdown [data]="content.firstBlockProgramList"></markdown>
       </div>
 
-      <button class="btn" onclick="openOverlay()">Записаться</button>
+      <button class="btn" onclick="openOverlay()">{{ content.firstBlockButtonText }}</button>
     </div>
   </main>
 
   <div class="reasons">
     <div class="reasons__text-block">
-      <h2 class="reasons__header">Почему MIROS?</h2>
+      <h2 class="reasons__header">{{ content.reasonsBLockHeader }}</h2>
       <div class="text-block__reasons">
         <img src="assets/img/Marathons%20numbers.png" alt="">
         <div class="text-block__text">
-          <p>Мирос устраивает марафоны с небольшим количеством участников - это значит, что отношения в коллективе будет максимально крепкие, мотивация сильной, а поддержка коллектива мирос - персонализированной </p>
-          <p>Мирос организовывает качественные тренировки и консультации - большинство воркаутов и встреч проходит в оффлайн-режиме, у каждого участника есть возможность получить личную консультацию и поддержку приглашённых специалистов </p>
-          <p>Мирос заботится о ваших личных целях - в начале марафона проходит встреча, направленная на постановку целей на марафон. Организаторы будут поддерживать работу каждого участника над его индивидуальными целями</p>
+          <p>{{ content.reasonsBlockFirst }}</p>
+          <p>{{ content.reasonsBlockSecond }}</p>
+          <p>{{ content.reasonsBlockThird }}</p>
         </div>
       </div>
     </div>
@@ -58,15 +50,15 @@
   <!--  /reasons-->
 
   <div class="stats">
-    <h3 class="stats__who">кто мы?</h3>
-    <h2 class="stats__header">MIROS - это перспективный быстро растущий проект с активным коммьюнити и большими планами на будущее.</h2>
+    <h3 class="stats__who">{{ content.whoBlockSubtitle }}</h3>
+    <h2 class="stats__header">{{ content.whoBlockTitle }}</h2>
     <div class="stats__numbers-wrap">
-      <div class="numbers-wrap__wrap">
-        <h3 class="stats__number">12</h3>
-        <h4>событий</h4>
-        <p>уже проведено нами под эгидой MIROS</p>
+      <div class="numbers-wrap__wrap" *ngFor="let stat of content.stats">
+        <h3 class="stats__number">{{ stat.number }}</h3>
+        <h4>{{ stat.title }}</h4>
+        <p>{{ stat.text }}</p>
       </div>
-      <div class="numbers-wrap__wrap">
+      <!-- <div class="numbers-wrap__wrap">
         <h3 class="stats__number">1000+</h3>
         <h4>человек</h4>
         <p>насчитывает наше коммьюнити</p>
@@ -75,7 +67,7 @@
         <h3 class="stats__number">2</h3>
         <h4>года</h4>
         <p>опыта и мы не собираемся останавливаться</p>
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -84,10 +76,10 @@
   <app-commentaries></app-commentaries>
 
   <div class="action-intent">
-    <h3>Измени свою жинзь к лучшему!</h3>
-    <h2>Запишись на марафон</h2>
+    <h3>{{ content.motivationBlockSubtitle }}</h3>
+    <h2>{{ content.motivationBlockTitle }}</h2>
     <button class="btn" onclick="openOverlay()">
-      Записаться
+      {{ content.motivationBlockButtonText }}
     </button>
 
     <h3 class="action-intent__decoration action-intent__decoration-left">MARATHON</h3>
