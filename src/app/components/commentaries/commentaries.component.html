@@ -1,19 +1,19 @@
 <div class="commentaries">
-    <h2>{{ content.blockHeader }}</h2>
+    <h2>{{ content?.blockHeader }}</h2>
     <div class="commentaries-slider" id="carousel">
     <div class="commentary-wrap">
       <div class="commentary card shadow">
-        <markdown [data]="content.firstBlock"></markdown>
+        <markdown [data]="content?.firstBlock"></markdown>
       </div> 
     </div>
       
     <div class="commentary-wrap">
       <div class="commentary card shadow">
-        <markdown [data]="content.secondBlock"></markdown>
+        <markdown [data]="content?.secondBlock"></markdown>
     </div>
     <div class="commentary-wrap">
       <div class="commentary card shadow">
-        <markdown [data]="content.thirdBlock"></markdown>
+        <markdown [data]="content?.thirdBlock"></markdown>
       </div>
     </div>
     </div>

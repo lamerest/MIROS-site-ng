@@ -4,17 +4,17 @@
   </div>
   <nav class="header__menu">
     <ul>
-      <li><a routerLink="/">{{ content.menu.main }}</a></li>
-      <li><a routerLink="/marathons">{{ content.menu.marathons }}</a></li>
-      <li><a routerLink="/blog">{{ content.menu.blog }}</a></li>
-      <li><a routerLink="/about">{{ content.menu.about }}</a></li>
+      <li><a routerLink="/">{{ content?.menu?.main }}</a></li>
+      <li><a routerLink="/marathons">{{ content?.menu?.marathons }}</a></li>
+      <li><a routerLink="/blog">{{ content?.menu?.blog }}</a></li>
+      <li><a routerLink="/about">{{ content?.menu?.about }}</a></li>
     </ul>
   </nav>
 
   <div class="header__language">
     <select [(ngModel)]="lang" (change)="changeLanguage()" class="header__language-select" name="language">
-      <option [value]="lang.languageCode" *ngFor="let lang of content.languages">
-        {{ lang.languageName }}
+      <option [value]="lang?.languageCode" *ngFor="let lang of content?.languages">
+        {{ lang?.languageName }}
         <!-- <img [src]="lang.languageImage?.url"> -->
       </option>
       

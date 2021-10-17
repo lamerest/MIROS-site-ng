@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit () {
     this.getFooterAndHeader()
-    this.langSubscription = this.languageService.langSubject.subscribe(this.subscriber)
+    this.langSubscription = this.languageService.langSubject.subscribe(this.subscriber)    
   }
 
   async getFooterAndHeader() {

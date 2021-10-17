@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
     private languageService: LanguageService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {    
     this.lang = this.languageService.getLanguage()
   }
 
