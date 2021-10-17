@@ -2,6 +2,7 @@ import {
   Component,
   ElementRef,
   HostListener,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -16,7 +17,7 @@ import { LanguageService } from 'src/app/services/language.service';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss'],
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit, OnDestroy {
   scrollEventsCounter = 0;
   isHeaderVisible = false;
 
@@ -50,6 +51,10 @@ export class MainPageComponent implements OnInit {
     this.langSubscription = this.languageService.langSubject.subscribe(
       this.subscriber
     );
+  }
+
+  ngOnDestroy() {
+    this.langSubscription.unsubscribe()
   }
 
   async changeLocalization() {
