@@ -20,7 +20,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
   subscriber = { 
     next: () => { 
       this.lang = this.languageService.getLanguage();
-      this.changeLokalization()
+      this.changeLocalization()
     } 
   }
 
@@ -47,7 +47,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
     this.article = await this.blogService.getArticleById(this.id)
   }
 
-  changeLokalization() {
+  changeLocalization() {
     let localization = this.article.localizations.find(localization => localization.locale === this.lang)
     
     if (localization != null) {

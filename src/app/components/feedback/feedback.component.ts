@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IMainPage, IReview } from 'src/app/models/pages';
 
 @Component({
   selector: 'app-feedback',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feedback.component.scss']
 })
 export class FeedbackComponent implements OnInit {
+  @Input() content!: IReview
 
   constructor() { }
 
