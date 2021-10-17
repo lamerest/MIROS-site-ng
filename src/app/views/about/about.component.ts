@@ -26,6 +26,7 @@ export class AboutComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getContent()
+    this.langSubscription = this.languageService.langSubject.subscribe(this.subscriber)
   }
 
   ngOnDestroy() {
@@ -38,5 +39,5 @@ export class AboutComponent implements OnInit, OnDestroy {
 }
 
 const standardContent: IAboutPage = {
-  
+
 }

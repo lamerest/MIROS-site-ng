@@ -26,6 +26,7 @@ export class MarathonsComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
     this.getContent()
+    this.langSubscription = this.languageService.langSubject.subscribe(this.subscriber)
   }
 
   ngOnDestroy() {
@@ -33,7 +34,7 @@ export class MarathonsComponent implements OnInit, OnDestroy{
   }
 
   async getContent() {
-    this.content = await this.contentService.getAboutPage()
+    this.content = await this.contentService.getMarathonsPage()
   }
 }
 
