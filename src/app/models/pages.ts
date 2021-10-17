@@ -55,8 +55,8 @@ export interface IMenu {
 }
 
 export interface IFooter {
-    id:	string
-    Footer:	IFooterContent
+    id:	number | string
+    footer:	IFooterContent
     localizations?:	ILocalization[]
     locale:	LanguageCode
 }
@@ -67,6 +67,7 @@ export interface IFooterContent {
     contactsBlockHeader:	string
     contactsBlockPhone:	string
     contactsBlockEmail:	string
+    menu: IMenu
 }
 
 export interface IReview {

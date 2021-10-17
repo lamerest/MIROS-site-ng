@@ -11,7 +11,7 @@ import { LanguageService } from 'src/app/services/language.service';
 })
 export class HeaderComponent implements OnInit {
   @Input() isHidden = false
-  @Input() content: IHeader = standardHeader
+  @Input() content!: IHeader
 
   lang: LanguageCode = LanguageCode.ru
   LanguageCode = LanguageCode
@@ -27,33 +27,4 @@ export class HeaderComponent implements OnInit {
   changeLanguage() {
     this.languageService.setLanguage(this.lang)
   }
-}
-
-const standardHeader: IHeader = {
-  id: 1,
-  menu:	{
-    id: 1,
-    main: "Главная",
-    blog: "Блог",
-    marathons: "Марафоны",
-    about: "О нас"
-  },
-  languages:	[
-    {
-      languageName: "RU",
-      languageCode: LanguageCode.ru,
-      id: 1
-    },
-    {
-      languageName: "EN",
-      languageCode: LanguageCode.en,
-      id: 1
-    },
-    {
-      languageName: "FR",
-      languageCode: LanguageCode.fr,
-      id: 1
-    },
-  ],
-  locale:	LanguageCode.ru
 }

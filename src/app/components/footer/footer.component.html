@@ -1,6 +1,6 @@
 <footer class="footer">
   <div class="footer__social-media">
-    <h3 class="footer__header">Наши соцсети</h3>
+    <h3 class="footer__header">{{ content.footer?.socialMediaHeader }}</h3>
     <ul class="social-media__list">
       <li class="social-media__item social-media__item-telegram"><a href="#">Telegram</a></li>
       <li class="social-media__item social-media__item-instagram"><a href="#">Instagram</a></li>
@@ -11,11 +11,10 @@
   <div class="footer__main-block">
     <nav class="footer__menu">
       <ul>
-        <li><a href="/">Главная</a></li>
-        <li><a href="/marathons">Марафоны</a></li>
-        <li><a href="/blog">Блог</a></li>
-        <li><a href="/actions">Акции</a></li>
-        <li><a href="/about">О нас</a></li>
+        <li><a href="/">{{ content.footer?.menu?.main }}</a></li>
+        <li><a href="/marathons">{{ content.footer?.menu?.marathons }}</a></li>
+        <li><a href="/blog">{{ content.footer?.menu?.blog }}</a></li>
+        <li><a href="/about">{{ content.footer?.menu?.about }}</a></li>
       </ul>
     </nav>
 
@@ -25,10 +24,10 @@
   </div>
 
   <div class="footer__contacts">
-    <h3 class="footer__header">Контакты</h3>
+    <h3 class="footer__header">{{ content.footer?.contactsBlockHeader }}</h3>
     <ul class="contacts__list">
-      <li class="contacts__item">+7 (900) 645 11 65</li>
-      <li class="contacts__item">miros.platform@gmail.com</li>
+      <li class="contacts__item">{{ content.footer?.contactsBlockPhone }}</li>
+      <li class="contacts__item">{{ content.footer?.contactsBlockEmail }}</li>
     </ul>
   </div>
 </footer>
