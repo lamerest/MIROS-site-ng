@@ -21,7 +21,28 @@ export interface IMainPage {
 }
 
 export interface IAboutPage {
-
+    id:	number | string
+    mainImage:	IImage
+    welocmeHeader:	string
+    welcomeText:	string
+    welcomeImage:	IImage
+    missionHeader:	string
+    missionText:	string
+    missionMedia:	IImage
+    telegramBlockHeader:	string
+    telegramBlockText:	string
+    instagramBlockHeader:	string
+    instagramBlockText:	string
+    instagramBlockImage:	IImage
+    experienceHeader:	string
+    experienceText:	string
+    telegramBotHeader:	string
+    telegramBotText:	string
+    telegramBotImage:	IImage
+    contactsHeader:	string
+    contactsText:	string
+    localizations:	ILocalization[]
+    locale: 	LanguageCode
 }
 
 export interface IBlogPage {
@@ -130,24 +151,24 @@ export interface IVideo {
 }
 
 export interface IImage {
-    id: number |string
-    name:	string
-    alternativeText:	string
-    caption:	string
+    id?: number |string
+    name?:	string
+    alternativeText?:	string
+    caption?:	string
     width?:	number
     height?:	number
-    formats:	any
-    hash:	string
-    ext:	string
-    mime:	string
-    size:	number
+    formats?:	any
+    hash?:	string
+    ext?:	string
+    mime?:	string
+    size?:	number
     url:	string
     previewUrl?:	string
-    provider:	string
-    provider_metadata:	any
-    related:	string
-    created_by:	string
-    updated_by:	string
+    provider?:	string
+    provider_metadata?:	any
+    related?:	string
+    created_by?:	string
+    updated_by?:	string
 }
 
 export interface ICommentary {

@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { LanguageCode } from 'src/app/models/blog';
 import { IAboutPage } from 'src/app/models/pages';
 import { ContentService } from 'src/app/services/content.service';
 import { LanguageService } from 'src/app/services/language.service';
@@ -39,5 +40,33 @@ export class AboutComponent implements OnInit, OnDestroy {
 }
 
 const standardContent: IAboutPage = {
+    id:	1,
+    mainImage:	{ url: "assets/img/About%20main%20.png" },
+    welocmeHeader: "МЫ - MIROS TEAM",
+    welcomeText:	"Идея MiRos появилась вместе с желанием создать комплексную платформу, которая собрала бы в себе все важные аспекты здорового образа жизни и совместила бы их так, чтобы любой человек мог добиться реалистичного и естественного подхода к спорту, питанию, и психологии зож",
+    welcomeImage:	{ url: "assets/img/About%20polaroid.png" },
 
+    missionHeader:	"Наша миссия",
+    missionText:	"Помочь людям построить здоровые отношения со своим телом через реалистичный подход к ЗОЖ и эстетику спорта \n\n Сегодня наш проект это - \n - Регулярные тренировки с профессионалами в совершенно разных фитнес-направлениях   марафоны с целью создания эффективной, но регулярной фитнес-рутины\n - Консультации со специалистами в области диетологии, нутрициологии и психологии \n - Блог с проверенной эксклюзивной информацией о спорте и питании",
+    missionMedia:	{ url: "assets/img/About%20polaroid%202.png" },
+
+    telegramBlockHeader:	"Telegram канал",
+    telegramBlockText:	"Здесь ты найдёшь разноплановую информацию о фитнесе: эффективные тренировки, вкусные и полезные рецепты, а также просто факты и лайфхаки, которые помогут тебе сделать своё тело более выносливым и энергичным",
+    
+    instagramBlockHeader:	"Instagram",
+    instagramBlockText:	"Эстетика здоровья и спорта в аккаунте нашего инстаграма. Здесь мы регулярно размещаем всю актуальную информацию о работе проекта, а также расписание ближайших спортивных событий MiRos",
+    instagramBlockImage:	{ url: "assets/img/About%20polaroid%203.png" },
+
+    experienceHeader:	"Опыт",
+    experienceText:	"Первый марафон MIROS (01.02.21 - 14.02.21) \n - Второй марафон MIROS (05.05.21 - 16.05.21) \n - Летний спортивный сезон с MIROS 2021\n - Встречи-консультации со специалистами",
+
+    telegramBotHeader:	"Telegram бот",
+    telegramBotText:	"Телеграм-бот, задача которого - составить сбалансированный и здоровый рацион через оценку энергетической ценности продукта",
+    telegramBotImage:	{ url: "assets/img/Bot%20demo.png" },
+
+    contactsHeader:	"Контакты",
+    contactsText:	"Мы открыты к сотрудничеству со специалистами в сфере спорта, психологии, диетологии и нутрициологии",
+
+    localizations:	[],
+    locale: 	LanguageCode.ru
 }
