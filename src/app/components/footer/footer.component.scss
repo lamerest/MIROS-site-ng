@@ -26,6 +26,7 @@
 
   &__logo {
     width: 80%;
+    max-width: 600px;
     margin: auto;
 
     img {
@@ -43,7 +44,7 @@
       margin-bottom: 44px;
   
       li a {
-        margin-right: 10px;
+        margin: 0 10px 0;
         font-family: var(--header);
         font-weight: 500;
         font-size: 20px;
@@ -104,13 +105,17 @@
     }
   }
 }
-.contacts__item {
-  text-align: right;
-}
-.contacts__item {
-  color: var(--primary-green);
+.contacts {
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    text-align: right;
+    color: var(--primary-green);
   font-family: Montserrat, sans-serif;
   margin-bottom: 15px;
   font-size: 18px;
   font-weight: lighter;
+  }
 }
