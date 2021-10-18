@@ -4,6 +4,7 @@ import { LanguageCode } from 'src/app/models/blog';
 import { IAboutPage } from 'src/app/models/pages';
 import { ContentService } from 'src/app/services/content.service';
 import { LanguageService } from 'src/app/services/language.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-about',
@@ -36,6 +37,15 @@ export class AboutComponent implements OnInit, OnDestroy {
 
   async getContent() {
     this.content = await this.contentService.getAboutPage()
+    this.appendImageUrls()
+  }
+
+  appendImageUrls() {
+    this.content.mainImage.url = environment.serverUrl + this.content.mainImage.url
+    this.content.welcomeImage.url = environment.serverUrl + this.content.welcomeImage.url
+    this.content.missionMedia.url = environment.serverUrl + this.content.missionMedia.url
+    this.content.instagramBlockImage.url = environment.serverUrl + this.content.instagramBlockImage.url
+    this.content.telegramBotImage.url = environment.serverUrl + this.content.telegramBotImage.url
   }
 }
 
