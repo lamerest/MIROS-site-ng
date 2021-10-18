@@ -1,32 +1,49 @@
 <div class="commentaries">
-    <h2>{{ content?.blockHeader }}</h2>
-    <div class="commentaries-slider" id="carousel">
+  <h2>{{ content?.blockHeader }}</h2>
+  <div class="commentaries-slider" id="carousel">
+
     <div class="commentary-wrap">
       <div class="commentary card shadow">
         <markdown [data]="content?.firstBlock"></markdown>
-      </div> 
+      </div>
     </div>
-      
+
     <div class="commentary-wrap">
       <div class="commentary card shadow">
         <markdown [data]="content?.secondBlock"></markdown>
+      </div>
     </div>
+
     <div class="commentary-wrap">
       <div class="commentary card shadow">
         <markdown [data]="content?.thirdBlock"></markdown>
       </div>
     </div>
+
+    <div class="leaf-buttons">
+      <button
+        class="leaf-button leaf-button__arrow-left shadow"
+        onclick="changeCommentary(-1)"
+      >
+        <img src="assets/img/Arrow%20button.png" alt="" />
+      </button>
+      <button
+        class="leaf-button leaf-button__arrow-right shadow-inverse"
+        onclick="changeCommentary(1)"
+      >
+        <img src="assets/img/Arrow%20button.png" alt="" />
+      </button>
     </div>
-      <div class="round-buttons leaf-buttons">
-        <button class="leaf-button leaf-button__arrow-left shadow" onclick="changeCommentary(-1)">
-          <img src="assets/img/Arrow%20button.png" alt="">
-        </button>
-        <button class="leaf-button leaf-button__arrow-right shadow-inverse" onclick="changeCommentary(1)">
-          <img src="assets/img/Arrow%20button.png" alt="">
-        </button>
-      
-  </div>
-  <img src="assets/img/FEEDBACK.png" alt="" class="feedback__decoration feedback__decoration-left">
-      <img src="assets/img/FEEDBACK.png" alt="" class="feedback__decoration feedback__decoration-right"> 
+    <img
+      src="assets/img/FEEDBACK.png"
+      alt=""
+      class="feedback__decoration feedback__decoration-left"
+    />
+    <img
+      src="assets/img/FEEDBACK.png"
+      alt=""
+      class="feedback__decoration feedback__decoration-right"
+    />
   </div>
   <!--  /commentary-->
+</div>

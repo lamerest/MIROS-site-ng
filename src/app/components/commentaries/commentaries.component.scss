@@ -3,29 +3,34 @@
   overflow: hidden;
   padding-bottom: 100px;
   position: relative;
+
+  h2 {
+    font-size: 32px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+
+  &-slider {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 100px;
+    margin-left: 0vw;
+    flex-shrink: 0;
+    transition: 0.3s ease-in-out;
+  }
+
+  &-wrap {
+    min-width: 50vw;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
-.commentaries h2 {
-  font-size: 32px;
-  padding-top: 100px;
-  text-align: center;
-}
-.commentaries-slider {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  margin-bottom: 100px;
-  margin-left: 0vw;
-  flex-shrink: 0;
-  transition: 0.3s ease-in-out;
-}
-.commentary-wrap {
-  min-width: 50vw;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .commentary {
   max-width: 500px;
   max-height: 600px;
@@ -34,14 +39,19 @@
   border-radius: 12px;
   transition: 0.3s ease-in-out;
   color: #282828;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  &-wrap {
+    width: 100vw;
+    flex: 1;
+    flex-shrink: 0;
+  }
 }
-.commentary img {
-  width: 100%;
-  border-radius: 8px;
-}
-.commentary p {
-  font-family: Raleway, sans-serif;
-}
+
 .leaf-buttons {
   position: absolute;
   width: 680px;
@@ -53,33 +63,52 @@
   transform: translateX(-50%);
   z-index: 1000;
 }
+
 .leaf-button {
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+  padding: 10px 10px;
+  border: none;
   transition: 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &__arrow-left {
+
+    &:hover {
+      transform: translateX(-10%) scale(1.05);
+    }
+  }
+
+  &__arrow-right {
+    transform: rotate(180deg);
+    
+    &:hover {
+      transform: scale(1.05) rotate(180deg) translateX(-10%);
+    }
+  }
 }
-.leaf-button:hover {
-  transform: scale(1.1);
-}
-.leaf-button__arrow-left:hover {
-  transform: translateX(-10%) scale(1.05);
-}
-.leaf-button__arrow-right {
-  transform: rotate(180deg);
-}
-.leaf-button__arrow-right:hover {
-  transform: scale(1.05) rotate(180deg) translateX(-10%);
-}
-.feedback__decoration {
-  position: absolute;
-  top: 25%;
-  height: 400px;
-  color: #c4c4c4;
-  z-index: -1;
-  filter: blur(2px);
-}
-.feedback__decoration-left {
-  left: 50px;
-  transform: rotate(180deg);
-}
-.feedback__decoration-right {
-  right: 50px;
+
+.feedback {
+  &__decoration {
+    position: absolute;
+    top: 25%;
+    height: 400px;
+    color: #c4c4c4;
+    z-index: -1;
+    filter: blur(2px);
+    width: unset;
+
+    &-left {
+      left: 50px;
+      transform: rotate(180deg);
+    }
+
+    &-right {
+      right: 50px;
+    }
+  }
 }
