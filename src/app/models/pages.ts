@@ -6,8 +6,12 @@ export interface IMainPage {
     welcomeSubtitle:	string
     welcomeButton:	string
     aboutHeader:	string
-    reviews:	IReview
-    commentaries:	ICommentary
+    
+    review:	IReview
+
+    commentariesBlockHeader: string,
+    commentaries:	ICommentary[]
+
     aboutSecondTextBlock:	string
     aboutFirstTextBlock:	string
     aboutSubtitle:	string
@@ -53,24 +57,35 @@ export interface IBlogPage {
 
 export interface IMarathonsPage {
     id: number | string
+    
     welcomeHeader:	string
     welcomeText:	string
     welcomeSubtitle:	string
+    
     firstBlockHeader:	string
     firstBlockSubtitle:	string
     firstBlockProgramHeader:	string
     firstBlockProgramList:	string
     firstBlockButtonText:	string
+    
     reasonsBLockHeader:	string
     reasonsBlockFirst:	string
     reasonsBlockSecond:	string
     reasonsBlockThird:	string
+    
     whoBlockSubtitle:	string
     whoBlockTitle:	string
     stats:	IStat[]
+
+    review:	IReview
+
+    commentariesBlockHeader: string
+    commentaries: ICommentary[]
+
     motivationBlockSubtitle:	string
     motivationBlockTitle:	string
     motivationBlockButtonText:	string
+
     localizations:	ILocalization[]
     locale: LanguageCode
 
@@ -118,8 +133,8 @@ export interface IFooterContent {
 
 export interface IReview {
     id: number | string
-    reviewHeader:	string
-    reviewText:	string
+    reviewsHeader:	string
+    reviewsText:	string
     videos:	IVideo[]
 }
 
@@ -173,8 +188,5 @@ export interface IImage {
 
 export interface ICommentary {
     id:	number | string
-    firstBlock:	string
-    secondBlock:	string
-    thirdBlock:	string
-    blockHeader: string
+    text: string
 }

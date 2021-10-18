@@ -11,7 +11,7 @@ import { LanguageService } from 'src/app/services/language.service';
   styleUrls: ['./marathons.component.scss'],
 })
 export class MarathonsComponent implements OnInit, OnDestroy {
-  content: IMarathonsPage = standardContent;
+  content!: IMarathonsPage;
 
   langSubscription!: Subscription;
   subscriber = {
@@ -38,6 +38,7 @@ export class MarathonsComponent implements OnInit, OnDestroy {
 
   async getContent() {
     this.content = await this.contentService.getMarathonsPage();
+    console.log(this.content);
   }
 }
 
@@ -87,6 +88,20 @@ const standardContent: IMarathonsPage = {
       number: '2',
       title: 'года',
       text: 'опыта и мы не собираемся останавливаться',
+    },
+  ],
+
+  review: {
+    id: 1,
+    reviewsHeader: "",
+    reviewsText: "",
+    videos: []
+  },
+  commentariesBlockHeader: "Комментарии",
+  commentaries: [
+    {
+      id: 3,
+      text: '### Марафон 05.05-16.05\n\nОчень редко встречается тот продукт или услуга, которая несёт в себе столько ценности и на 100000% оправдывает свою цену! \n\nЗа время марафона я заметила качественные изменения в теле, благодаря силовым тренировкам и растяжке оффлайн! \n\nЖивые встречи и знакомства с такими же заряженными людьми дают стимул не сдаваться! Это прям очень важно!!!! Спасибо вам за это ♥\n️\nА так же внимательность и чуткость со стороны кураторов и организаторов в общем чате, ничего не оставляют без внимания 💕\nMiRos вы супер крутые❗️Развития Вам, покорения новых вершин❗️\nЖдите меня на следующем марафоне 😉',
     },
   ],
   localizations: [{ id: 2, locale: LanguageCode.en }],

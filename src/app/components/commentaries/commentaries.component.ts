@@ -7,8 +7,8 @@ import { ICommentary } from 'src/app/models/pages';
   styleUrls: ['./commentaries.component.scss']
 })
 export class CommentariesComponent implements OnInit {
-  @Input() content!: ICommentary
-  comments = [1, 2, 3]
+  @Input() content!: ICommentary[]
+  @Input() header!: string
 
   constructor() { }
 
