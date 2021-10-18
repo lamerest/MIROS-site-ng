@@ -222,6 +222,7 @@ form p {
   box-shadow: -4px 5px 21px rgba(0, 0, 0, 0.25);
   background-color: ghostwhite;
   border-radius: 12px;
+  padding: 20px 30px;
 }
 .shadow {
   box-shadow: -4px 5px 21px rgba(0, 0, 0, 0.25);
@@ -232,4 +233,16 @@ form p {
 markdown {
   font-family: Raleway, sans-serif;
   font-size: 16px;
+}
+.carousel-container {
+  overflow: visible !important;
+
+  .carousel-cells {
+
+    .carousel-cell {
+      top: 10% !important;
+      // transform: translateY(-50%) !important;
+      height: unset !important;
+    }
+  }
 }

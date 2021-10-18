@@ -1,6 +1,6 @@
 .commentaries {
-  width: 100vw;
-  overflow: hidden;
+  width: 60%;
+  margin: auto;
   padding-bottom: 100px;
   position: relative;
 
@@ -11,86 +11,76 @@
     text-align: center;
   }
 
-  &-slider {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin-bottom: 100px;
-    margin-left: 0vw;
-    flex-shrink: 0;
-    transition: 0.3s ease-in-out;
+  .carousel-wrap {
+    width: 500px;
+    margin: auto;
   }
 
-  &-wrap {
-    min-width: 50vw;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .carousel-cell {
+    margin-left: -30px;
   }
 }
 
-.commentary {
-  max-width: 500px;
-  max-height: 600px;
-  flex-shrink: 0;
-  padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s ease-in-out;
-  color: #282828;
+// .commentary {
+//   max-width: 500px;
+//   max-height: 600px;
+//   flex-shrink: 0;
+//   padding: 20px;
+//   border-radius: 12px;
+//   transition: 0.3s ease-in-out;
+//   color: #282828;
 
-  img {
-    width: 100%;
-    border-radius: 8px;
-  }
+//   img {
+//     width: 100%;
+//     border-radius: 8px;
+//   }
 
-  &-wrap {
-    width: 100vw;
-    flex: 1;
-    flex-shrink: 0;
-  }
-}
+//   &-wrap {
+//     width: 100vw;
+//     flex: 1;
+//     flex-shrink: 0;
+//   }
+// }
 
-.leaf-buttons {
-  position: absolute;
-  width: 680px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  top: 45%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-}
+// .leaf-buttons {
+//   position: absolute;
+//   width: 680px;
+//   margin: auto;
+//   display: flex;
+//   justify-content: space-between;
+//   top: 45%;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   z-index: 1000;
+// }
 
-.leaf-button {
-  border-radius: 30px;
-  width: 60px;
-  height: 60px;
-  padding: 10px 10px;
-  border: none;
-  transition: 0.2s ease-in-out;
+// .leaf-button {
+//   border-radius: 30px;
+//   width: 60px;
+//   height: 60px;
+//   padding: 10px 10px;
+//   border: none;
+//   transition: 0.2s ease-in-out;
 
-  &:hover {
-    transform: scale(1.1);
-  }
+//   &:hover {
+//     transform: scale(1.1);
+//   }
 
-  &__arrow-left {
+//   &__arrow-left {
 
-    &:hover {
-      transform: translateX(-10%) scale(1.05);
-    }
-  }
+//     &:hover {
+//       transform: translateX(-10%) scale(1.05);
+//     }
+//   }
 
-  &__arrow-right {
-    transform: rotate(180deg);
+//   &__arrow-right {
+//     transform: rotate(180deg);
     
-    &:hover {
-      transform: scale(1.05) rotate(180deg) translateX(-10%);
-    }
-  }
-}
+//     &:hover {
+//       transform: scale(1.05) rotate(180deg) translateX(-10%);
+//     }
+//   }
+// }
 
 .feedback {
   &__decoration {

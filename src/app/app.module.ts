@@ -26,6 +26,7 @@ import { ArticleCardComponent } from './components/article-card/article-card.com
 import { ArticlesListComponent } from './components/articles-list/articles-list.component';
 import { RepeatedHeaderComponent } from './components/repeated-header/repeated-header.component';
 import { FormsModule } from '@angular/forms';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
+    IvyCarouselModule,
     MarkdownModule.forRoot(
       { 
         loader: HttpClient,

@@ -8,6 +8,7 @@ import { ICommentary } from 'src/app/models/pages';
 })
 export class CommentariesComponent implements OnInit {
   @Input() content!: ICommentary
+  comments = [1, 2, 3]
 
   constructor() { }
 
