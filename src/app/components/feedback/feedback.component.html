@@ -6,7 +6,25 @@
     <img src="assets/img/Logo%20MR%20small%20white.png" alt="" class="logo" />
   </div>
 
-  <div class="video-slider">
+  <div class="carousel-wrap">
+    <carousel 
+    [height]="500"
+    [width]="400"
+    [cellsToShow]="1"
+    [arrowsTheme]="'light'"
+    [overflowCellsLimit]="2"
+    [arrowsOutside]="true"
+  >
+    <div *ngFor="let video of content?.videos" class="carousel-cell">
+      <video 
+        [src]="video.url" 
+        controls
+      ></video>
+    </div>
+  </carousel>
+  </div>
+
+  <!-- <div class="video-slider">
     <div class="video-slider__phone">
       <img src="assets/img/Phone.png" alt="" />
     </div>
@@ -40,13 +58,13 @@
     <div class="video-slider__leaf-buttons">
       <div
         class="leaf-button leaf-button__arrow-left shadow"
-        onclick="plusSlide(-1)"
+        (click)="changeSlide(-1)"
       >
         <img src="assets/img/Arrow%20button.png" alt="" />
       </div>
       <div
         class="leaf-button shadow-inverse leaf-button__arrow-right"
-        onclick="plusSlide(1)"
+        (click)="changeSlide(1)"
       >
         <img src="assets/img/Arrow%20button.png" alt="" />
       </div>
@@ -57,6 +75,6 @@
       <div class="dot"></div>
       <div class="dot"></div>
     </div>
-  </div>
+  </div> -->
 </div>
 <!--  /feedback-->
