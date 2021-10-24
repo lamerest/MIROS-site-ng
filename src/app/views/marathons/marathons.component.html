@@ -6,8 +6,8 @@
     <div class="main__text-block">
 
         <div class="text-block__block">
-        <h2>{{ content.firstBlockHeader }}</h2>
-        <h3 class="text-block__text-gray">{{ content.firstBlockSubtitle }}</h3>
+        <h2>{{ content?.firstBlockHeader }}</h2>
+        <h3 class="text-block__text-gray">{{ content?.firstBlockSubtitle }}</h3>
 
             <div class="text-block__social-media-block">
             <div class="social-media">
@@ -23,23 +23,23 @@
       </div>
 
       <div class="text-block__block">
-        <h2>{{ content.firstBlockProgramHeader }}</h2>
-        <markdown [data]="content.firstBlockProgramList"></markdown>
+        <h2>{{ content?.firstBlockProgramHeader }}</h2>
+        <markdown [data]="content?.firstBlockProgramList"></markdown>
       </div>
 
-      <button class="btn" onclick="openOverlay()">{{ content.firstBlockButtonText }}</button>
+      <button class="btn" onclick="openOverlay()">{{ content?.firstBlockButtonText }}</button>
     </div>
   </main>
 
   <div class="reasons">
     <div class="reasons__text-block">
-      <h2 class="reasons__header">{{ content.reasonsBLockHeader }}</h2>
+      <h2 class="reasons__header">{{ content?.reasonsBLockHeader }}</h2>
       <div class="text-block__reasons">
         <img src="assets/img/Marathons%20numbers.png" alt="">
         <div class="text-block__text">
-          <p>{{ content.reasonsBlockFirst }}</p>
-          <p>{{ content.reasonsBlockSecond }}</p>
-          <p>{{ content.reasonsBlockThird }}</p>
+          <p>{{ content?.reasonsBlockFirst }}</p>
+          <p>{{ content?.reasonsBlockSecond }}</p>
+          <p>{{ content?.reasonsBlockThird }}</p>
         </div>
       </div>
     </div>
@@ -50,26 +50,26 @@
   <!--  /reasons-->
 
   <div class="stats">
-    <h3 class="stats__who">{{ content.whoBlockSubtitle }}</h3>
-    <h2 class="stats__header">{{ content.whoBlockTitle }}</h2>
+    <h3 class="stats__who">{{ content?.whoBlockSubtitle }}</h3>
+    <h2 class="stats__header">{{ content?.whoBlockTitle }}</h2>
     <div class="stats__numbers-wrap">
-      <div class="numbers-wrap__wrap" *ngFor="let stat of content.stats">
-        <h3 class="stats__number">{{ stat.number }}</h3>
-        <h4>{{ stat.title }}</h4>
-        <p>{{ stat.text }}</p>
+      <div class="numbers-wrap__wrap" *ngFor="let stat of content?.stats">
+        <h3 class="stats__number">{{ stat?.number }}</h3>
+        <h4>{{ stat?.title }}</h4>
+        <p>{{ stat?.text }}</p>
       </div>
     </div>
   </div>
 
-  <app-feedback [content]="content.review"></app-feedback>
+  <app-feedback *ngIf="content" [content]="content.review"></app-feedback>
 
-  <app-commentaries [content]="content.commentaries" [header]="content.commentariesBlockHeader"></app-commentaries>
+  <app-commentaries *ngIf="content" [content]="content.commentaries" [header]="content.commentariesBlockHeader"></app-commentaries>
 
   <div class="action-intent">
-    <h3>{{ content.motivationBlockSubtitle }}</h3>
-    <h2>{{ content.motivationBlockTitle }}</h2>
+    <h3>{{ content?.motivationBlockSubtitle }}</h3>
+    <h2>{{ content?.motivationBlockTitle }}</h2>
     <button class="btn" onclick="openOverlay()">
-      {{ content.motivationBlockButtonText }}
+      {{ content?.motivationBlockButtonText }}
     </button>
 
     <h3 class="action-intent__decoration action-intent__decoration-left">MARATHON</h3>

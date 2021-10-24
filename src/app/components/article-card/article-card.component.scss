@@ -3,6 +3,7 @@
     padding: 20px 20px 15px;
     border-radius: 12px;
     overflow: hidden;
+    position: relative;
     background-color: var(--primary-black);
     cursor: pointer;
     color: ghostwhite;
@@ -49,7 +50,9 @@
         overflow: hidden;
     }
     &__reactions {
-        margin-left: auto;
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
         display: flex;
         justify-content: space-between;
         background-color: #515151;

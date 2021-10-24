@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { IMainPage, IReview } from 'src/app/models/pages';
 import { environment } from 'src/environments/environment';
 
@@ -7,30 +7,13 @@ import { environment } from 'src/environments/environment';
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.scss']
 })
-export class FeedbackComponent implements OnInit, OnChanges {
+export class FeedbackComponent implements OnInit {
   @Input() content!: IReview
 
+  @ViewChildren("video") videos!: QueryList<ElementRef>;
+ 
   constructor() { }
 
   ngOnInit(): void {
-    this.changeVideosUrls()
-  }
-
-  ngOnChanges() {
-    this.changeVideosUrls()
-  }
-
-  changeSlide(amount: number) {
-
-  }
-
-  changeVideosUrls() {
-    for (let video of this.content.videos) {
-      if (!video.url.includes("http")) {
-        video.url = environment.serverUrl + video.url
-      }
-    }
-    console.log(this.content);
-    
   }
 }

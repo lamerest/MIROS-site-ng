@@ -1,0 +1,7 @@
+<div (click)="stopVideo()" class="player">
+    <video (click)="stopVideo()" [src]="src" #video></video>
+    
+    <div *ngIf="!isVideoPlaying" (click)="playVideo(); $event.stopPropagation()" class="player__button">
+        <img src="assets/img/play.png" alt="">
+    </div>
+</div>

@@ -1,33 +1,36 @@
 <div class="feedback">
-    
   <div class="feedback__text-block">
     <h2>{{ content?.reviewsHeader }}</h2>
     <p><markdown [data]="content?.reviewsText"></markdown></p>
     <img src="assets/img/Logo%20MR%20small%20white.png" alt="" class="logo" />
   </div>
 
-  <div class="carousel-wrap">
-    <carousel 
-    [height]="500"
-    [width]="400"
-    [cellsToShow]="1"
-    [arrowsTheme]="'light'"
-    [overflowCellsLimit]="2"
-    [arrowsOutside]="true"
-  >
-    <div *ngFor="let video of content?.videos" class="carousel-cell">
-      <video 
-        [src]="video.url" 
-        controls
-      ></video>
+  <div [style.position]="'relative'">
+    <div class="carousel-wrap">
+      <carousel
+        [height]="600"
+        [width]="230"
+        [cellWidth]="250"
+        [cellsToShow]="1"
+        [arrowsTheme]="'light'"
+        [overflowCellsLimit]="2"
+        [arrowsOutside]="false"
+      >
+        <div *ngFor="let video of content?.videos" class="carousel-cell">
+          <app-player [src]="video.url"></app-player>
+        </div>
+      </carousel>
     </div>
-  </carousel>
-  </div>
-
-  <!-- <div class="video-slider">
-    <div class="video-slider__phone">
+    <div class="feedback__phone">
       <img src="assets/img/Phone.png" alt="" />
     </div>
+  </div>
+  
+
+  
+
+  <!-- <div class="video-slider">
+    
 
     <div class="video-slider__wrap">
       <div class="video-slider__carousel" id="slider">

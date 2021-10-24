@@ -27,6 +27,8 @@ import { ArticlesListComponent } from './components/articles-list/articles-list.
 import { RepeatedHeaderComponent } from './components/repeated-header/repeated-header.component';
 import { FormsModule } from '@angular/forms';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { PlayerComponent } from './components/player/player.component';
+import { CallbackPopupComponent } from './components/callback-popup/callback-popup.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     ArticleCardComponent,
     ArticlesListComponent,
     RepeatedHeaderComponent,
+    PlayerComponent,
+    CallbackPopupComponent,
   ],
   imports: [
     HttpClientModule,

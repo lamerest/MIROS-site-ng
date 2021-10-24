@@ -246,3 +246,15 @@ markdown {
     }
   }
 }
+
+.carousel-wrap {
+  .carousel-container { 
+    transform: translateY(-8%);
+  }
+}
+
+.carousel-arrows {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
