@@ -21,7 +21,13 @@
   <main class="article__content">
     <h1 class="article__title">{{ article?.title }}</h1>
     <div class="article__categories">
-        <span class="article__categories-text">Категории: </span><span *ngFor="let category of article?.categories" class="article__category">{{ category?.name }}</span>
+        <span class="article__categories-text">Категории: </span>
+        <span 
+          *ngFor="let category of article?.categories" 
+          [style.color]="category.textHexColor" 
+          [style.backgroundColor]="category.hexColor" 
+          class="article__category"
+        >{{ category?.name }}</span>
     </div>
     <markdown class="variable-binding" [data]="article?.content"></markdown>
 

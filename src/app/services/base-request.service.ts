@@ -41,7 +41,7 @@ export class BaseRequestService {
     useDataWrapper: boolean
   ): Promise<any> {
     let body;
-    let headers
+    let headers: any = {}
     
     if (this.localStorage.getItem("accessToken")) {
       headers = {
@@ -49,6 +49,7 @@ export class BaseRequestService {
         ...headersObj,
       };  
     }
+    console.log(data);
     
     if (data) {
       headers["Content-Type"] = "application/json";

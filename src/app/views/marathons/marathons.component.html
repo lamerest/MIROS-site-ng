@@ -27,7 +27,7 @@
         <markdown [data]="content?.firstBlockProgramList"></markdown>
       </div>
 
-      <button class="btn" onclick="openOverlay()">{{ content?.firstBlockButtonText }}</button>
+      <button class="btn" (click)="toggleModal()">{{ content?.firstBlockButtonText }}</button>
     </div>
   </main>
 
@@ -68,7 +68,7 @@
   <div class="action-intent">
     <h3>{{ content?.motivationBlockSubtitle }}</h3>
     <h2>{{ content?.motivationBlockTitle }}</h2>
-    <button class="btn" onclick="openOverlay()">
+    <button class="btn" (click)="toggleModal()">
       {{ content?.motivationBlockButtonText }}
     </button>
 
@@ -77,4 +77,4 @@
   </div>
 </section>
 
-<app-callback></app-callback>
+<app-callback *ngIf="isPopupVisible" [content]="content.callbackPopup[0]" (closeModal)="toggleModal()"></app-callback>

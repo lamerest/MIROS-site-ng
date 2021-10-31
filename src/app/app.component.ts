@@ -3,7 +3,7 @@ import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {BehaviorSubject, Subscription} from 'rxjs';
 import {isPlatformBrowser} from '@angular/common';
 import { ContentService } from './services/content.service';
-import { IFooter, IHeader } from './models/pages';
+import { IFooter, IHeader } from './models/components';
 import { LanguageCode } from './models/blog';
 import { LanguageService } from './services/language.service';
 @Component({

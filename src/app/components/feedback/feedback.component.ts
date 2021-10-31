@@ -1,6 +1,5 @@
 import { Component, ElementRef, Input, OnChanges, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { IMainPage, IReview } from 'src/app/models/pages';
-import { environment } from 'src/environments/environment';
+import { IReview } from 'src/app/models/components';
 
 @Component({
   selector: 'app-feedback',

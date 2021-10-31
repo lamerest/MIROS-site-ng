@@ -12,6 +12,7 @@ import { LanguageService } from 'src/app/services/language.service';
 })
 export class MarathonsComponent implements OnInit, OnDestroy {
   content!: IMarathonsPage;
+  isPopupVisible = false
 
   langSubscription!: Subscription;
   subscriber = {
@@ -39,6 +40,10 @@ export class MarathonsComponent implements OnInit, OnDestroy {
   async getContent() {
     this.content = await this.contentService.getMarathonsPage();
     console.log(this.content);
+  }
+
+  toggleModal() {
+    this.isPopupVisible = !this.isPopupVisible 
   }
 }
 
@@ -90,6 +95,13 @@ const standardContent: IMarathonsPage = {
       text: 'опыта и мы не собираемся останавливаться',
     },
   ],
+  callbackPopup: [{
+    header: "",
+    name: "",
+    phone: "",
+    mail: "",
+    button: "",
+  }],
 
   review: {
     id: 1,

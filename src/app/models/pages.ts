@@ -1,4 +1,6 @@
 import { ILocalization, LanguageCode } from "./blog";
+import { ICallBackPopup, ICommentary, IReview, IStat } from "./components";
+import { IImage } from "./image";
 
 export interface IMainPage {
     id:	number | string
@@ -87,107 +89,11 @@ export interface IMarathonsPage {
     motivationBlockTitle:	string
     motivationBlockButtonText:	string
 
+    callbackPopup: ICallBackPopup[]
+
     localizations:	ILocalization[]
     locale: LanguageCode
 
     created_at: string,
     updated_at: string,
-}
-
-export interface IHeader {
-    id: number |	string
-    menu:	IMenu,
-    languages:	ILanguage[],
-    localizations?:	ILocalization[]
-    locale:	LanguageCode
-}
-
-export interface ILanguage {
-    id: number | string
-    languageName:	string
-    languageCode:	LanguageCode
-    languageImage?: IImage
-}
-export interface IMenu {
-    id:	number | string
-    main:	string
-    marathons:	string
-    blog:	string
-    about:	string
-}
-
-export interface IFooter {
-    id:	number | string
-    footer:	IFooterContent
-    localizations?:	ILocalization[]
-    locale:	LanguageCode
-}
-
-export interface IFooterContent {
-    id: number | string
-    socialMediaHeader:	string
-    contactsBlockHeader:	string
-    contactsBlockPhone:	string
-    contactsBlockEmail:	string
-    menu: IMenu
-}
-
-export interface IReview {
-    id: number | string
-    reviewsHeader:	string
-    reviewsText:	string
-    videos:	IVideo[]
-}
-
-export interface IStat {
-    id: number
-    number:	number | string,
-    title:	string,
-    text:	string,
-}
-export interface IVideo {
-    id:	number | string
-    name:	string
-    alternativeText:	string
-    caption:	string
-    width?:	number
-    height?:	number
-    formats:	any
-    hash:	string
-    ext:	string
-    mime:	string
-    size:	number
-    url:	string
-    previewUrl?:	string
-    provider:	string
-    provider_metadata:	any
-    related?: string
-    created_at:	string
-    updated_at:	string
-}
-
-export interface IImage {
-    id?: number |string
-    name?:	string
-    alternativeText?:	string
-    caption?:	string
-    width?:	number
-    height?:	number
-    formats?:	any
-    hash?:	string
-    ext?:	string
-    mime?:	string
-    size?:	number
-    url:	string
-    previewUrl?:	string
-    provider?:	string
-    provider_metadata?:	any
-    related?:	string
-    created_by?:	string
-    updated_by?:	string
-}
-
-export interface ICommentary {
-    id:	number | string
-    text: string
 }

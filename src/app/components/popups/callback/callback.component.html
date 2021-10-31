@@ -1,20 +1,44 @@
 <section class="overlay" id="overlay">
-    <div class="overlay__background" onclick="closeOverlay()"></div>
+  <div class="overlay__background" (click)="closePopup()"></div>
 
   <article class="overlay__content">
     <figure class="content__figure"><img src="assets/img/Overlay.png" alt="Тренировка"></figure>
     <div class="content__wrapper">
-      <form class="wrapper__form">
-        <p class="form__text">оставьте свои</p>
-        <h2 class="form__header">КОНТАКТНЫЕ ДАННЫЕ</h2>
-        <p class="form__text">и мы с вами свяжемся</p>
-        <label>Имя</label>
-        <label>Телефон <span>(необязательно)</span></label>
-        <label>Email</label>
-        <input type="submit" class="btn" value="Отправить">
+      <form class="wrapper__form" (submit)="sendCallBack()" #form>
+        <div class="content__header">
+          <markdown [data]="content?.header"></markdown>
+        </div>
+        <label>{{ content?.name }}
+          <input 
+            type="text"
+            placeholder="Имя"
+            required
+            minlength="2"
+            [(ngModel)]="name"
+            name="name"
+          >
+        </label>
+        <label>{{ content?.phone }}
+          <input 
+            type="phone"
+            placeholder="+7 900 111 22 33"
+            [(ngModel)]="phone"
+            name="phone"
+          >
+        </label>
+        <label>{{ content?.mail }}
+          <input 
+            type="email"
+            placeholder="Email"
+            [(ngModel)]="email"
+            name="email"
+            required
+          >
+        </label>
+        <input type="submit" [disabled]="form.$invalid" class="btn" [value]="content?.button">
       </form>
     </div>
-    <div class="overlay__button-close" onclick="closeOverlay()">X</div>
+    <div class="overlay__button-close" (click)="closePopup()">X</div>
   </article>
 
 </section>

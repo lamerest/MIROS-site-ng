@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from '../common/local-storage';
 import { LanguageCode } from '../models/blog';
-import { IAboutPage, IBlogPage, IFooter, IHeader, IMainPage, IMarathonsPage } from '../models/pages';
+import { IFooter, IHeader } from '../models/components';
+import { IAboutPage, IBlogPage, IMainPage, IMarathonsPage } from '../models/pages';
 import { BaseRequestService } from './base-request.service';
 
 @Injectable({
@@ -39,6 +40,10 @@ export class ContentService {
   }
 
   async getFooter(): Promise<IFooter> { 
+    return await this.requestService.get("/footer?_locale=" + this.getLanguageCode()) 
+  }
+
+  async getCallBack(): Promise<IFooter> { 
     return await this.requestService.get("/footer?_locale=" + this.getLanguageCode()) 
   }
 
