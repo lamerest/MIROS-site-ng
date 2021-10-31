@@ -1,16 +1,5 @@
 <section class="section">
 
-  <!-- <h3 class="hero__button hero__button-miros">
-    <a routerLink="/">MIROS PLATFORM</a>
-  </h3>
-  <h3 class="hero__button hero__button-main"><a routerLink="/">ГЛАВНАЯ</a></h3>
-  <h3 class="hero__button hero__button-marathons">
-    <a href="/marathons">МАРАФОНЫ</a>
-  </h3>
-  <h3 class="hero__button hero__button-actions">
-    <a href="/actions">АКЦИИ</a>
-  </h3> -->
-
   <div class="article">
     <div class="article__first-block">
       <figure>
@@ -22,7 +11,10 @@
     <img src="assets/img/Arrow.png" alt="" />
   </figure>
 </section>
+
+
 <section class="section">
+
   <div class="article__block">
     <h2>{{ content.welocmeHeader }}</h2>
     <p>
@@ -65,6 +57,26 @@
   <div class="article__block">
     <h2>{{ content.experienceHeader }}</h2>
     <markdown [data]="content.experienceText"></markdown>
+
+    <div class="carousel-wrap article__carousel">
+      <!-- <carousel
+        [images]="content.experienceImages"
+      >
+      </carousel> -->
+      <carousel 
+      [height]="300"
+      [cellWidth]="400"
+      [arrowsOutside]="false"
+      [loop]="true"
+      [autoplay]="true"
+      [pauseOnHover]="true"
+      [transitionDuration]="500"
+      >
+      <div *ngFor="let image of content.experienceImages" class="carousel-cell carousel__cell">
+        <img [src]="getImageSource(image)" alt="">
+      </div>
+    </carousel>
+    </div>
   </div>
 
   <div class="article__block">
@@ -83,4 +95,5 @@
     </p>
     <a href="mailto:miros.platform@gmail.com">miros.platform@gmail.com</a>
   </div>
+
 </section>

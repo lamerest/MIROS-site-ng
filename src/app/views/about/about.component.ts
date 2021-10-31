@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LanguageCode } from 'src/app/models/blog';
-import { IAboutPage } from 'src/app/models/pages';
+import { IAboutPage, IImage } from 'src/app/models/pages';
 import { ContentService } from 'src/app/services/content.service';
 import { LanguageService } from 'src/app/services/language.service';
 import { environment } from 'src/environments/environment';
@@ -46,6 +46,10 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.content.missionMedia.url = environment.serverUrl + this.content.missionMedia.url
     this.content.instagramBlockImage.url = environment.serverUrl + this.content.instagramBlockImage.url
     this.content.telegramBotImage.url = environment.serverUrl + this.content.telegramBotImage.url
+  }
+
+  getImageSource(image: IImage): string{
+    return environment.serverUrl + image.url
   }
 }
 

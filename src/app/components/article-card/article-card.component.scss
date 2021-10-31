@@ -53,6 +53,7 @@
         position: absolute;
         bottom: 16px;
         right: 16px;
+        z-index: 101;
         display: flex;
         justify-content: space-between;
         background-color: #515151;
@@ -73,5 +74,14 @@
             height: 30px;
             object-fit: cover;
         }
+    }
+    .overlay {
+        position: absolute;
+        bottom: 20px;
+        z-index: 100;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(transparent 0%, var(--primary-black) )
     }
 }

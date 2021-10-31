@@ -40,6 +40,7 @@ export interface IAboutPage {
     instagramBlockImage:	IImage
     experienceHeader:	string
     experienceText:	string
+    experienceImages?: IImage[]
     telegramBotHeader:	string
     telegramBotText:	string
     telegramBotImage:	IImage
