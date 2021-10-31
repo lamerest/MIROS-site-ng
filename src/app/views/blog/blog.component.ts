@@ -44,6 +44,7 @@ export class BlogComponent implements OnInit, OnDestroy {
 
   async getArticles() {
     this.articles = await this.blogService.getArticles()
+    console.log(this.articles);
     this.firstArticles = this.articles?.splice(0, 4)
   }
 }

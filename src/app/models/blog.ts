@@ -56,6 +56,8 @@ export interface IArticle {
   export interface ICategory {
     id: number,
     name: string,
+    hexColor: string,
+    textHexColor: string,
     locale: LanguageCode,
     published_at: string,
     created_at: string,
