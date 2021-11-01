@@ -18,69 +18,9 @@
 
   .carousel-cell {
     margin-left: -30px;
+    height: unset;
   }
 }
-
-// .commentary {
-//   max-width: 500px;
-//   max-height: 600px;
-//   flex-shrink: 0;
-//   padding: 20px;
-//   border-radius: 12px;
-//   transition: 0.3s ease-in-out;
-//   color: #282828;
-
-//   img {
-//     width: 100%;
-//     border-radius: 8px;
-//   }
-
-//   &-wrap {
-//     width: 100vw;
-//     flex: 1;
-//     flex-shrink: 0;
-//   }
-// }
-
-// .leaf-buttons {
-//   position: absolute;
-//   width: 680px;
-//   margin: auto;
-//   display: flex;
-//   justify-content: space-between;
-//   top: 45%;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   z-index: 1000;
-// }
-
-// .leaf-button {
-//   border-radius: 30px;
-//   width: 60px;
-//   height: 60px;
-//   padding: 10px 10px;
-//   border: none;
-//   transition: 0.2s ease-in-out;
-
-//   &:hover {
-//     transform: scale(1.1);
-//   }
-
-//   &__arrow-left {
-
-//     &:hover {
-//       transform: translateX(-10%) scale(1.05);
-//     }
-//   }
-
-//   &__arrow-right {
-//     transform: rotate(180deg);
-    
-//     &:hover {
-//       transform: scale(1.05) rotate(180deg) translateX(-10%);
-//     }
-//   }
-// }
 
 .feedback {
   &__decoration {

@@ -12,7 +12,7 @@ import { LanguageService } from './services/language.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'MIROS';
+  title = 'MIROS PLATFORM';
 
   header: IHeader = standardHeader
   footer: IFooter = standardFooter

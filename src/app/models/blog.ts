@@ -13,7 +13,10 @@ export interface IArticle {
     updated_at: string,
     preview: IArticlePreview,
     categories: ICategory[],
-    localizations: ILocalization[]
+    localizations: ILocalization[],
+    SEODescription: string,
+    SEOKeywords: string
+    SEOAuthor: string,
   }
 
   export interface IArticlePreview {
