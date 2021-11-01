@@ -11,7 +11,7 @@ import { RegisterComponent } from './views/register/register.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BlogComponent } from './views/blog/blog.component';
-import { ArticleComponent } from './views/blog/article/article.component';
+import { ArticleComponent } from './views/article/article.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { CommentariesComponent } from './components/commentaries/commentaries.component';
 import { HeroComponent } from './views/main-page/hero/hero.component';

@@ -12,21 +12,22 @@
         display: flex;
         justify-content: space-between;
         padding: 20px 20px;
+    }
 
-        .article__social-media {
-            display: flex;
-            width: 100px;
-            justify-content: space-between;
-    
-            &-item {
-                transition: ease-in-out 0.2s;
+    &__social-media {
+        display: flex;
+        width: 100px;
+        justify-content: space-between;
+        list-style: none;
 
-                &:hover {
-                    opacity: 0.6;
-                }
-                img {
-                    width: 40px;
-                }
+        &-item {
+            transition: ease-in-out 0.2s;
+
+            &:hover {
+                opacity: 0.6;
+            }
+            img {
+                width: 40px;
             }
         }
     }

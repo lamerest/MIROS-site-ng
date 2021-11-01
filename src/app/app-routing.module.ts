@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArticleResolver } from './resolvers/article.resolver';
 import { AboutComponent } from './views/about/about.component';
-import { ArticleComponent } from './views/blog/article/article.component';
+import { ArticleComponent } from './views/article/article.component';
 import { BlogComponent } from './views/blog/blog.component';
 import { LoginComponent } from './views/login/login.component';
 import { MainPageComponent } from './views/main-page/main-page.component';

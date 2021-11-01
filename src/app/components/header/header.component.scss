@@ -1,16 +1,18 @@
 .header {
   position: fixed;
-  width: 100%;
+  width: calc(100% - 30px);
   background-color: ghostwhite;
   display: flex;
   align-items: center;
   height: 70px;
   top: 0;
   z-index: 11000;
+  border-radius: 0 0 12px 12px;
   justify-content: space-between;
   padding: 0px 15px;
   box-shadow: -4px 1px 21px rgba(0, 0, 0, 0.25);
   transition: 0.2s ease-in-out;
+
   &-hidden {
     top: -100px;
   }
@@ -22,7 +24,6 @@
       outline: none;
       background-color: #EEE;
       font-size: 1.0em;
-      margin-right: 30px;
       font-weight: 600;
     }
      
