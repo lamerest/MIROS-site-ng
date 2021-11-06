@@ -3,7 +3,7 @@
   <div class="article">
     <div class="article__first-block">
       <figure>
-        <img [src]="content.mainImage.url" alt="" />
+        <img [src]="content?.mainImage?.url" alt="" />
       </figure>
     </div>
   </div>
@@ -16,47 +16,47 @@
 <section class="section">
 
   <div class="article__block">
-    <h2>{{ content.welocmeHeader }}</h2>
+    <h2>{{ content?.welocmeHeader }}</h2>
     <p>
-      <markdown [data]="content.welcomeText"></markdown>
+      <markdown [data]="content?.welcomeText"></markdown>
     </p>
     <figure>
-      <img [src]="content.welcomeImage.url" alt="" />
+      <img [src]="content?.welcomeImage?.url" alt="" />
     </figure>
   </div>
 
   <div class="article__block">
-    <h2>{{ content.missionHeader }}</h2>
+    <h2>{{ content?.missionHeader }}</h2>
     <p>
-      <markdown [data]="content.missionText"></markdown> 
+      <markdown [data]="content?.missionText"></markdown> 
     </p>
     <figure>
-      <img [src]="content.missionMedia.url" alt="" />
+      <img [src]="content?.missionMedia?.url" alt="" />
     </figure>
   </div>
 
   <div class="article__block">
-    <h2>{{ content.telegramBlockHeader }}</h2>
+    <h2>{{ content?.telegramBlockHeader }}</h2>
     <p>
-      <markdown [data]="content.telegramBlockText"></markdown>
+      <markdown [data]="content?.telegramBlockText"></markdown>
     </p>
     <a href="tg">@MiRos</a>
   </div>
 
   <div class="article__block">
-    <h2>{{ content.instagramBlockHeader }}</h2>
+    <h2>{{ content?.instagramBlockHeader }}</h2>
     <p>
-      <markdown [data]="content.instagramBlockText"></markdown>
+      <markdown [data]="content?.instagramBlockText"></markdown>
     </p>
     <a href="inst">@miros.platform</a>
     <figure>
-      <img [src]="content.instagramBlockImage.url" alt="" />
+      <img [src]="content?.instagramBlockImage?.url" alt="" />
     </figure>
   </div>
 
   <div class="article__block">
-    <h2>{{ content.experienceHeader }}</h2>
-    <markdown [data]="content.experienceText"></markdown>
+    <h2>{{ content?.experienceHeader }}</h2>
+    <markdown [data]="content?.experienceText"></markdown>
 
     <div class="carousel-wrap article__carousel">
       <!-- <carousel
@@ -72,7 +72,7 @@
       [pauseOnHover]="true"
       [transitionDuration]="500"
       >
-      <div *ngFor="let image of content.experienceImages" class="carousel-cell carousel__cell">
+      <div *ngFor="let image of content?.experienceImages" class="carousel-cell carousel__cell">
         <img [src]="getImageSource(image)" alt="">
       </div>
     </carousel>
@@ -80,18 +80,18 @@
   </div>
 
   <div class="article__block">
-    <h2>{{ content.telegramBotHeader }}</h2>
+    <h2>{{ content?.telegramBotHeader }}</h2>
     <p>
-      <markdown [data]="content.telegramBotText"></markdown>
+      <markdown [data]="content?.telegramBotText"></markdown>
     </p>
     <a href="bot">@MiRosPlatformBot</a>
-    <figure><img [src]="content.telegramBotImage.url" alt="" /></figure>
+    <figure><img [src]="content?.telegramBotImage?.url" alt="" /></figure>
   </div>
 
   <div class="article__block">
-    <h2>{{ content.contactsHeader }}</h2>
+    <h2>{{ content?.contactsHeader }}</h2>
     <p>
-      {{ content.contactsText}}
+      {{ content?.contactsText}}
     </p>
     <a href="mailto:miros.platform@gmail.com">miros.platform@gmail.com</a>
   </div>

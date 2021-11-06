@@ -5,6 +5,7 @@ import { LanguageCode } from 'src/app/models/blog';
 import { IMarathonsPage } from 'src/app/models/pages';
 import { ContentService } from 'src/app/services/content.service';
 import { LanguageService } from 'src/app/services/language.service';
+import { MetaService } from 'src/app/services/meta.service';
 
 @Component({
   selector: 'app-marathons',
@@ -25,7 +26,7 @@ export class MarathonsComponent implements OnInit, OnDestroy {
   constructor(
     private languageService: LanguageService,
     private contentService: ContentService,
-    private readonly _meta: Meta
+    private readonly _metaService: MetaService
   ) {}
 
   ngOnInit(): void {
@@ -41,15 +42,8 @@ export class MarathonsComponent implements OnInit, OnDestroy {
 
   async getContent() {
     this.content = await this.contentService.getMarathonsPage();
-    this.setMetaTags()  
+    this._metaService.setMetaTags(this.content.SEODescription, this.content.SEOKeywords)
     console.log(this.content);
-  }
-
-  setMetaTags() {
-    if (this.content != null && this.content.SEODescription != null && this.content.SEOKeywords != null) {
-      this._meta.updateTag({ name: "description", content: this.content.SEODescription })
-      this._meta.updateTag({ name: "keywords", content: this.content.SEOKeywords })
-    }
   }
 
   toggleModal() {

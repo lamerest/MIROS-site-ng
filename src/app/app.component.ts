@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
   }
 
   private setMetaTags() {
-    this._meta.addTag({ name: "author", description: "Slava Vladykin"})
+    this._meta.addTag({ name: "author", content: "Slava Vladykin"})
   }
 }
 

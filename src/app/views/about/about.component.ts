@@ -6,6 +6,7 @@ import { IImage } from 'src/app/models/image';
 import { IAboutPage } from 'src/app/models/pages';
 import { ContentService } from 'src/app/services/content.service';
 import { LanguageService } from 'src/app/services/language.service';
+import { MetaService } from 'src/app/services/meta.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -26,7 +27,7 @@ export class AboutComponent implements OnInit, OnDestroy {
   constructor(
     private languageService: LanguageService,
     private contentService: ContentService,
-    private readonly _meta: Meta,
+    private readonly _metaService: MetaService,
   ) { }
 
   ngOnInit(): void {
@@ -41,22 +42,15 @@ export class AboutComponent implements OnInit, OnDestroy {
   async getContent() {
     this.content = await this.contentService.getAboutPage()
     this.appendImageUrls()
-    this.setMetaTags()
+    this._metaService.setMetaTags(this.content.SEODescription, this.content.SEOKeywords)
   }
 
   appendImageUrls() {
-    this.content.mainImage.url = environment.serverUrl + this.content.mainImage.url
-    this.content.welcomeImage.url = environment.serverUrl + this.content.welcomeImage.url
-    this.content.missionMedia.url = environment.serverUrl + this.content.missionMedia.url
-    this.content.instagramBlockImage.url = environment.serverUrl + this.content.instagramBlockImage.url
-    this.content.telegramBotImage.url = environment.serverUrl + this.content.telegramBotImage.url
-  }
-
-  setMetaTags() {
-    if (this.content != null && this.content.SEODescription != null && this.content.SEOKeywords != null) {
-      this._meta.updateTag({ name: "description", content: this.content.SEODescription })
-      this._meta.updateTag({ name: "keywords", content: this.content.SEOKeywords })
-    }
+    this.content.mainImage.url = environment.serverUrl + this.content?.mainImage?.url
+    this.content.welcomeImage.url = environment.serverUrl + this.content?.welcomeImage?.url
+    this.content.missionMedia.url = environment.serverUrl + this.content?.missionMedia?.url
+    this.content.instagramBlockImage.url = environment.serverUrl + this.content?.instagramBlockImage?.url
+    this.content.telegramBotImage.url = environment.serverUrl + this.content?.telegramBotImage?.url
   }
 
   getImageSource(image: IImage): string{

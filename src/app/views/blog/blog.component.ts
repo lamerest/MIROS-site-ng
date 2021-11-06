@@ -6,6 +6,7 @@ import { IBlogPage } from 'src/app/models/pages';
 import { BlogService } from 'src/app/services/blog.service';
 import { ContentService } from 'src/app/services/content.service';
 import { LanguageService } from 'src/app/services/language.service';
+import { MetaService } from 'src/app/services/meta.service';
 
 @Component({
   selector: 'app-blog',
@@ -27,7 +28,7 @@ export class BlogComponent implements OnInit, OnDestroy {
     private blogService: BlogService,
     private languageService: LanguageService,
     private contentService: ContentService,
-    private readonly _meta: Meta
+    private readonly _metaService: MetaService
   ) { }
 
   async ngOnInit() {
@@ -41,7 +42,7 @@ export class BlogComponent implements OnInit, OnDestroy {
 
   async getContent() {
     this.content = await this.contentService.getBlogPage()
-    this.setMetaTags()
+    this._metaService.setMetaTags(this.content.SEODescription, this.content.SEOKeywords)
     console.log(this.content);
     
     this.getArticles()
@@ -49,17 +50,7 @@ export class BlogComponent implements OnInit, OnDestroy {
 
   async getArticles() {
     this.articles = await this.blogService.getArticles()
-    console.log(this.articles);
     this.firstArticles = this.articles?.splice(0, 4)
-  }
-
-  private setMetaTags() {
-    if (this.content != null && this.content.SEODescription != null && this.content.SEOKeywords != null) {
-      console.log("Setting metas");
-      
-      this._meta.addTag({ name: "description", content: this.content.SEODescription })
-      this._meta.addTag({ name: "keywords", content: this.content.SEOKeywords })
-    }
   }
 }
 

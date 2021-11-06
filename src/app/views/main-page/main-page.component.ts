@@ -12,6 +12,7 @@ import { LanguageCode } from 'src/app/models/blog';
 import { IMainPage } from 'src/app/models/pages';
 import { ContentService } from 'src/app/services/content.service';
 import { LanguageService } from 'src/app/services/language.service';
+import { MetaService } from 'src/app/services/meta.service';
 
 @Component({
   selector: 'app-main-page',
@@ -45,12 +46,12 @@ export class MainPageComponent implements OnInit, OnDestroy {
   constructor(
     private languageService: LanguageService,
     private contentService: ContentService,
-    private readonly _meta: Meta,
+    private readonly _metaService: MetaService,
   ) {}
 
   async ngOnInit() {
     this.content = await this.contentService.getMainPage();
-    this.setMetaTags()
+    this._metaService.setMetaTags(this.content.SEODescription, this.content.SEOKeywords)
     this.langSubscription = this.languageService.langSubject.subscribe(
       this.subscriber
     );
@@ -62,14 +63,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
   async changeLocalization() {
     this.content = await this.contentService.getMainPage();
-    console.log(this.content);
-  }
-
-  setMetaTags() {
-    if (this.content != null && this.content.SEODescription != null && this.content.SEOKeywords != null) {
-      this._meta.updateTag({ name: "description", content: this.content.SEODescription })
-      this._meta.updateTag({ name: "keywords", content: this.content.SEOKeywords })
-    }
+    this._metaService.setMetaTags(this.content.SEODescription, this.content.SEOKeywords)
   }
 }
 
