@@ -24,6 +24,12 @@
     }
   }
 
+  &__main-block {
+    @media (max-width: 1024px) {
+      grid-area: menu;
+    }
+  }
+
   &__logo {
     width: 80%;
     max-width: 600px;
@@ -32,6 +38,19 @@
     img {
       width: 100%;
     }
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+
+    &_mobile {
+      display: none;
+      grid-area: logo;
+      
+      @media (max-width: 1024px) {
+        display: block;  
+      }
+    }
   }
 
   &__menu {
@@ -39,6 +58,7 @@
     ul {
       display: flex;
       justify-content: center;
+      
       list-style: none;
       border-bottom: 1px solid ghostwhite;
       margin-bottom: 44px;
@@ -58,21 +78,49 @@
           color: var(--primary-green);
         }
       }
+
+      @media (max-width: 520px) {
+        flex-direction: column;
+        list-style: disc;
+        color: ghostwhite;
+        border-bottom: 1px solid #444
+      }
     }
    
   }
 
-  &__contacts {
-    display: flex;
-    flex-direction: column;
-    padding: 0 10px;
+  @media screen and (max-width: 1024px) {
+    height: fit-content;
+    display: grid;
+    grid-template-areas: 
+    "menu menu"
+    "social contacts"
+    ". ."
+    "logo logo";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px 1fr 60px 1fr;
+  }
 
-    .footer__header {
-      text-align: right;
-    }
+  @media screen and (max-width: 520px) {
+
+    grid-template-areas: 
+    "menu"
+    "."
+    "social"
+    "."
+    "contacts"
+    "."
+    "logo";
+    grid-template-columns: 1fr;
+    height: fit-content;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 1.1fr 20px 1.5fr 20px 1fr 20px 1fr;
   }
 }
 .social-media {
+  grid-area: social;
+
   &__item {
     position: relative;
     height: 36px;
@@ -106,16 +154,33 @@
   }
 }
 .contacts {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  text-align: right;
+  grid-area: contacts;
+
+  .footer__header {
+    text-align: inherit;
+  }
+
   &__list {
     list-style: none;
+
+    @media (max-width: 520px) {
+      padding-left: 0px;
+    }
   }
 
   &__item {
-    text-align: right;
     color: var(--primary-green);
-  font-family: Montserrat, sans-serif;
-  margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: lighter;
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: lighter;
+  }
+
+  @media (max-width: 520px) {
+    text-align: left;
   }
 }
