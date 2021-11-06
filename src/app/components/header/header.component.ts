@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit {
 
   lang: LanguageCode = LanguageCode.ru
   LanguageCode = LanguageCode
+
+  isMobileMenuOpen = false
   
   constructor(
     private languageService: LanguageService
@@ -26,5 +28,9 @@ export class HeaderComponent implements OnInit {
 
   changeLanguage() {
     this.languageService.setLanguage(this.lang)
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen
   }
 }

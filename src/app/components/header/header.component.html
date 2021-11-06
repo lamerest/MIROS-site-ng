@@ -1,26 +1,88 @@
-<header class="header card" [class.header-hidden]="isHidden">
+<header [class.header-hidden]="isHidden" class="header card">
   <div class="header__logo">
     <a routerLink="/"><img src="assets/img/MR%20black.png" alt="" /></a>
   </div>
-  <nav class="header__menu">
-    <ul>
-      <li><a routerLink="/">{{ content?.menu?.main }}</a></li>
-      <li><a routerLink="/marathons">{{ content?.menu?.marathons }}</a></li>
-      <li><a routerLink="/blog">{{ content?.menu?.blog }}</a></li>
-      <li><a routerLink="/about">{{ content?.menu?.about }}</a></li>
+  <nav class="header__menu menu">
+    <ul class="menu__list">
+      <li class="menu__list-item">
+        <a routerLink="/" routerLinkActive="menu__list-item_active" class="menu__list-item" >
+          {{ content?.menu?.main }}
+        </a>
+      </li>
+      <li>
+        <a routerLink="/marathons" routerLinkActive="menu__list-item_active" class="menu__list-item" >{{
+          content?.menu?.marathons
+        }}</a>
+      </li>
+      <li class="menu__list-item">
+        <a routerLink="/blog" routerLinkActive="menu__list-item_active" class="menu__list-item" >{{
+          content?.menu?.blog
+        }}</a>
+      </li>
+      <li class="menu__list-item">
+        <a routerLink="/about" routerLinkActive="menu__list-item_active" class="menu__list-item" >{{
+          content?.menu?.about
+        }}</a>
+      </li>
     </ul>
   </nav>
 
   <div class="header__language">
-    <select [(ngModel)]="lang" (change)="changeLanguage()" class="header__language-select" name="language">
-      <option [value]="lang?.languageCode" *ngFor="let lang of content?.languages">
+    <select
+      [(ngModel)]="lang"
+      (change)="changeLanguage()"
+      class="header__language-select"
+      name="language"
+    >
+      <option
+        [value]="lang?.languageCode"
+        *ngFor="let lang of content?.languages"
+      >
         {{ lang?.languageName }}
         <!-- <img [src]="lang.languageImage?.url"> -->
       </option>
-      
+
       <!-- <option [value]="LanguageCode.en">EN</option>
       <option [value]="LanguageCode.fr">FR</option>
       <option [value]="LanguageCode.ru">RU</option> -->
     </select>
   </div>
+</header>
+
+<header [class.header_expanded]="isMobileMenuOpen" class="header header_mobile card">
+  <div class="mobile-menu">
+    <div class="header__logo">
+      <a routerLink="/"><img src="assets/img/MR%20black.png" alt="" /></a>
+    </div>
+    <div (click)="toggleMobileMenu()" class="menu-button">
+      <img src="assets/img/menu.svg" alt="menu">
+    </div>
+  </div>
+
+  <nav *ngIf="isMobileMenuOpen">
+    <ul (click)="toggleMobileMenu()" class="menu__list">
+      <li class="menu__list-item">
+        <a routerLink="/" routerLinkActive="menu__list-item_active" class="menu__list-item" >
+          {{ content?.menu?.main }}
+        </a>
+      </li>
+      <li>
+        <a routerLink="/marathons" routerLinkActive="menu__list-item_active" class="menu__list-item" >{{
+          content?.menu?.marathons
+        }}</a>
+      </li>
+      <li class="menu__list-item">
+        <a routerLink="/blog" routerLinkActive="menu__list-item_active" class="menu__list-item" >{{
+          content?.menu?.blog
+        }}</a>
+      </li>
+      <li class="menu__list-item">
+        <a routerLink="/about" routerLinkActive="menu__list-item_active" class="menu__list-item" >{{
+          content?.menu?.about
+        }}</a>
+      </li>
+    </ul>
+  </nav>
+
+
 </header>
