@@ -16,7 +16,7 @@
         [arrowsOutside]="false"
       >
         <div *ngFor="let video of content?.videos" class="carousel-cell">
-          <app-player [src]="video.url"></app-player>
+          <app-player [src]="video?.url"></app-player>
         </div>
       </carousel>
     </div>

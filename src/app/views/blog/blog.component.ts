@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { IArticle } from 'src/app/models/blog';
 import { IBlogPage } from 'src/app/models/pages';
@@ -25,7 +26,8 @@ export class BlogComponent implements OnInit, OnDestroy {
   constructor(
     private blogService: BlogService,
     private languageService: LanguageService,
-    private contentService: ContentService
+    private contentService: ContentService,
+    private readonly _meta: Meta
   ) { }
 
   async ngOnInit() {
@@ -39,6 +41,9 @@ export class BlogComponent implements OnInit, OnDestroy {
 
   async getContent() {
     this.content = await this.contentService.getBlogPage()
+    this.setMetaTags()
+    console.log(this.content);
+    
     this.getArticles()
   }
 
@@ -46,6 +51,15 @@ export class BlogComponent implements OnInit, OnDestroy {
     this.articles = await this.blogService.getArticles()
     console.log(this.articles);
     this.firstArticles = this.articles?.splice(0, 4)
+  }
+
+  private setMetaTags() {
+    if (this.content != null && this.content.SEODescription != null && this.content.SEOKeywords != null) {
+      console.log("Setting metas");
+      
+      this._meta.addTag({ name: "description", content: this.content.SEODescription })
+      this._meta.addTag({ name: "keywords", content: this.content.SEOKeywords })
+    }
   }
 }
 

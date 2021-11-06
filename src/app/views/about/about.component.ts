@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LanguageCode } from 'src/app/models/blog';
 import { IImage } from 'src/app/models/image';
@@ -24,7 +25,8 @@ export class AboutComponent implements OnInit, OnDestroy {
 
   constructor(
     private languageService: LanguageService,
-    private contentService: ContentService
+    private contentService: ContentService,
+    private readonly _meta: Meta,
   ) { }
 
   ngOnInit(): void {
@@ -39,6 +41,7 @@ export class AboutComponent implements OnInit, OnDestroy {
   async getContent() {
     this.content = await this.contentService.getAboutPage()
     this.appendImageUrls()
+    this.setMetaTags()
   }
 
   appendImageUrls() {
@@ -47,6 +50,13 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.content.missionMedia.url = environment.serverUrl + this.content.missionMedia.url
     this.content.instagramBlockImage.url = environment.serverUrl + this.content.instagramBlockImage.url
     this.content.telegramBotImage.url = environment.serverUrl + this.content.telegramBotImage.url
+  }
+
+  setMetaTags() {
+    if (this.content != null && this.content.SEODescription != null && this.content.SEOKeywords != null) {
+      this._meta.updateTag({ name: "description", content: this.content.SEODescription })
+      this._meta.updateTag({ name: "keywords", content: this.content.SEOKeywords })
+    }
   }
 
   getImageSource(image: IImage): string{

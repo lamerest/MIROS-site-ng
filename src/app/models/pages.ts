@@ -24,6 +24,9 @@ export interface IMainPage {
 
     created_at: string,
     updated_at: string,
+
+    SEODescription?: string,
+    SEOKeywords?: string,
 }
 
 export interface IAboutPage {
@@ -49,13 +52,19 @@ export interface IAboutPage {
     contactsHeader:	string
     contactsText:	string
     localizations:	ILocalization[]
-    locale: 	LanguageCode
+    locale: 	LanguageCode,
+
+    SEODescription?: string,
+    SEOKeywords?: string,
 }
 
 export interface IBlogPage {
     title: string,
     lastArticles: string,
-    articles: string
+    articles: string,
+
+    SEODescription?: string,
+    SEOKeywords?: string,
 }
 
 export interface IMarathonsPage {
@@ -96,4 +105,7 @@ export interface IMarathonsPage {
 
     created_at: string,
     updated_at: string,
+
+    SEODescription?: string,
+    SEOKeywords?: string,
 }

@@ -5,11 +5,11 @@
     </div>
 
     <div class="about-block">
-      <h2>{{ content.aboutHeader }}</h2>
+      <h2>{{ content?.aboutHeader }}</h2>
       <div class="about-block__wrapper">
         <div class="wrapper__text-block">
-          <h3>{{ content.aboutSubtitle }}</h3>
-          <p><markdown [data]="content.aboutFirstTextBlock"></markdown></p>
+          <h3>{{ content?.aboutSubtitle }}</h3>
+          <p><markdown [data]="content?.aboutFirstTextBlock"></markdown></p>
           <div class="text-block__social-media-block">
             <div class="social-media">
               <img src="assets/img/Inst%20icon.png" alt="">
@@ -21,7 +21,7 @@
             </div>
           </div>
 
-          <p class="additional-text"><markdown [data]="content.telegramBotText"></markdown></p>
+          <p class="additional-text"><markdown [data]="content?.telegramBotText"></markdown></p>
         </div>
         <figure>
           <img src="assets/img/Main%20polaroid%201.png" alt="">
@@ -30,8 +30,8 @@
       <div class="bot-block__wrapper">
         <figure><img src="assets/img/Bot%20demo.png" alt=""></figure>
         <div class="wrapper__text-block">
-          <h3>{{ content.telegramBotHeader }}</h3>
-          <p>{{ content.telegramBotText }}</p>
+          <h3>{{ content?.telegramBotHeader }}</h3>
+          <p>{{ content?.telegramBotText }}</p>
           <p class="bot-link"><a href="https://t.me/MiRosPlatformBot" class="wrapper__text-block-link">@MiRosPlatformBot</a></p>
         </div>
       </div>

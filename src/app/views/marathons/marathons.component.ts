@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LanguageCode } from 'src/app/models/blog';
 import { IMarathonsPage } from 'src/app/models/pages';
@@ -23,7 +24,8 @@ export class MarathonsComponent implements OnInit, OnDestroy {
 
   constructor(
     private languageService: LanguageService,
-    private contentService: ContentService
+    private contentService: ContentService,
+    private readonly _meta: Meta
   ) {}
 
   ngOnInit(): void {
@@ -39,7 +41,15 @@ export class MarathonsComponent implements OnInit, OnDestroy {
 
   async getContent() {
     this.content = await this.contentService.getMarathonsPage();
+    this.setMetaTags()  
     console.log(this.content);
+  }
+
+  setMetaTags() {
+    if (this.content != null && this.content.SEODescription != null && this.content.SEOKeywords != null) {
+      this._meta.updateTag({ name: "description", content: this.content.SEODescription })
+      this._meta.updateTag({ name: "keywords", content: this.content.SEOKeywords })
+    }
   }
 
   toggleModal() {

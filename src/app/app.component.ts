@@ -6,6 +6,7 @@ import { ContentService } from './services/content.service';
 import { IFooter, IHeader } from './models/components';
 import { LanguageCode } from './models/blog';
 import { LanguageService } from './services/language.service';
+import { Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -29,19 +30,25 @@ export class AppComponent implements OnInit {
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
     private contentService: ContentService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private readonly _meta: Meta
     ) {
     AppComponent.isBrowser.next(isPlatformBrowser(platformId));
   }
 
   ngOnInit () {
     this.getFooterAndHeader()
-    this.langSubscription = this.languageService.langSubject.subscribe(this.subscriber)    
+    this.langSubscription = this.languageService.langSubject.subscribe(this.subscriber)
+    this.setMetaTags()    
   }
 
   async getFooterAndHeader() {
     this.header = await this.contentService.getHeader()
     this.footer = await this.contentService.getFooter()    
+  }
+
+  private setMetaTags() {
+    this._meta.addTag({ name: "author", description: "Slava Vladykin"})
   }
 }
 

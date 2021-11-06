@@ -6,6 +6,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LanguageCode } from 'src/app/models/blog';
 import { IMainPage } from 'src/app/models/pages';
@@ -43,11 +44,13 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private languageService: LanguageService,
-    private contentService: ContentService
+    private contentService: ContentService,
+    private readonly _meta: Meta,
   ) {}
 
   async ngOnInit() {
-    this.changeLocalization();
+    this.content = await this.contentService.getMainPage();
+    this.setMetaTags()
     this.langSubscription = this.languageService.langSubject.subscribe(
       this.subscriber
     );
@@ -60,6 +63,13 @@ export class MainPageComponent implements OnInit, OnDestroy {
   async changeLocalization() {
     this.content = await this.contentService.getMainPage();
     console.log(this.content);
+  }
+
+  setMetaTags() {
+    if (this.content != null && this.content.SEODescription != null && this.content.SEOKeywords != null) {
+      this._meta.updateTag({ name: "description", content: this.content.SEODescription })
+      this._meta.updateTag({ name: "keywords", content: this.content.SEOKeywords })
+    }
   }
 }
 

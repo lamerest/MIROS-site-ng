@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import { Observable, Observer, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { IArticle, LanguageCode } from 'src/app/models/blog';
 import { BlogService } from 'src/app/services/blog.service';
 import { LanguageService } from 'src/app/services/language.service';
@@ -28,13 +29,14 @@ export class ArticleComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private blogService: BlogService,
     private languageService: LanguageService,
-    private router: Router
+    private router: Router,
+    private readonly meta: Meta
   ) { }
 
   async ngOnInit() {
     this.id = this.activatedRoute.snapshot.params.id
-    this.getArticle()
-    
+    await this.retrieveArticle()
+    this.setMetaTags()
     this.langSubscription = this.languageService.langSubject.subscribe(this.subscriber) 
   }
 
@@ -43,8 +45,16 @@ export class ArticleComponent implements OnInit, OnDestroy {
   }
 
 
-  async getArticle() {
+  async retrieveArticle() {
     this.article = await this.blogService.getArticleById(this.id)
+  }
+
+  setMetaTags() {
+    if (this.article != null) {
+      this.meta.updateTag({ name: "description", content: this.article.SEODescription})
+      this.meta.updateTag({ name: "keywords", content: this.article.SEOKeywords})
+      this.meta.updateTag({ name: "author", content: this.article.author})
+    }
   }
 
   changeLocalization() {
@@ -53,7 +63,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
     if (localization != null) {
       this.router.navigateByUrl("/article/" + localization.id)
       this.id = localization.id
-      this.getArticle()
+      this.retrieveArticle()
     }
   }
 }
