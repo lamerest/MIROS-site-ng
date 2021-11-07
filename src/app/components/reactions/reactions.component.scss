@@ -1,0 +1,41 @@
+.reactions {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #515151;
+    width: fit-content;
+    padding: 0 10px;
+    border-radius: 8px;
+
+    &__action {
+        position: relative;
+        padding: 5px 5px 0;
+        margin: 0;
+        transition: 0.2s ease-in-out;
+        opacity: 0.5;
+
+        img {
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+        }
+
+        &_active {
+            opacity: 1;
+        }
+
+        &:hover {
+            transform: scale(1.2)
+        }
+    }
+
+    &__counter {
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        font-family: Space Mono, sans-serif;
+        opacity: 0.6;
+        font-weight: bold;
+        font-size: 13px;
+    }
+}

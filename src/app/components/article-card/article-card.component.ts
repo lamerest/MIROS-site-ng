@@ -12,7 +12,6 @@ export class ArticleCardComponent implements OnInit {
   @Input() article!: IArticle;
 
   constructor(
-    private readonly _reactionsService: ReactionsService,
   ) { }
 
   ngOnInit(): void {
@@ -20,16 +19,5 @@ export class ArticleCardComponent implements OnInit {
 
   getPreviewUrl(article: IArticle): string {
     return environment.serverUrl + article.preview.formats.small.url;
-  }
-
-  react(reaction: "like" | "dislike") {
-    console.log(reaction);
-    this.article.userReaction = reaction;
-    this._reactionsService.addReaction(
-      {
-        article: this.article.id,
-        action: reaction
-      }
-    )
   }
 }

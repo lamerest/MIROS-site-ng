@@ -1,0 +1,19 @@
+<div class="reactions" [class.reaction_light]="lightMode">
+    <figure 
+        (click)="react('like')" 
+        [class.reactions__action_active]="article?.userReaction == 'like'"
+        class="reactions__action"
+    >
+        <img src="assets/img/Heart.png" alt="like">
+        <span class="reactions__counter" >{{ likes?? 0 }}</span>
+    </figure>
+
+    <figure 
+        (click)="react('dislike')" 
+        [class.reactions__action_active]="article?.userReaction == 'dislike'"
+        class="reactions__action"    
+    >
+        <img src="assets/img/Broken heart.png" alt="dislike">
+        <span class="reactions__counter">{{ dislikes?? 0 }}</span>
+    </figure>
+</div>

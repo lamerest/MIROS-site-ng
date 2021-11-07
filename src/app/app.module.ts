@@ -29,6 +29,7 @@ import { FormsModule } from '@angular/forms';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { PlayerComponent } from './components/player/player.component';
 import { CallbackPopupComponent } from './components/callback-popup/callback-popup.component';
+import { ReactionsComponent } from './components/reactions/reactions.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { CallbackPopupComponent } from './components/callback-popup/callback-pop
     RepeatedHeaderComponent,
     PlayerComponent,
     CallbackPopupComponent,
+    ReactionsComponent,
   ],
   imports: [
     HttpClientModule,
