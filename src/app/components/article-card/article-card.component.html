@@ -12,12 +12,12 @@
     <div class="article-card__text-wrap">
         <markdown [data]="article.previewText"></markdown>
     </div>
-    <div class="article-card__reactions">
-        <figure (click)="react('like'); $event.stopPropagation()">
-            <img src="assets/img/Heart.png" alt="">
+    <div class="article-card__reactions" (click)="$event.stopPropagation()">
+        <figure (click)="react('like')">
+            <img src="assets/img/Heart.png" alt="like">
         </figure>
-        <figure (click)="react('dislike'); $event.stopPropagation()">
-            <img src="assets/img/Broken heart.png" alt="">
+        <figure (click)="react('dislike')" >
+            <img src="assets/img/Broken heart.png" alt="dislike">
         </figure>
     </div>
     <div class="overlay"></div>

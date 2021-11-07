@@ -33,17 +33,15 @@ export class ReactionsService {
 
     // Checking if user already reacted on the article
     let tempReaction = this.reactions.find(x => x.article.id === reaction.article)
-    console.log("Found reaction in local", tempReaction);
     
     if (tempReaction != null && tempReaction.id != null) {
       console.log("User already reacted on the article");
 
       if (tempReaction.action !== reaction.action) {
-        console.log("Replacing reaction");
+        console.log("Reaction changed");
         tempReaction = this.replaceReactionInLocalStorage(tempReaction.article.id)
         return await this.updateReactionOnArticle(tempReaction.id, tempReaction);
       } else {
-        console.log("Reacted with same reaction");
         return;
       }
     }
