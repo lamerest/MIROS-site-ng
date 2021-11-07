@@ -13,10 +13,10 @@
         <markdown [data]="article.previewText"></markdown>
     </div>
     <div class="article-card__reactions" (click)="$event.stopPropagation()">
-        <figure (click)="react('like')">
+        <figure (click)="react('like')" [class.active]="article?.userReaction == 'like'">
             <img src="assets/img/Heart.png" alt="like">
         </figure>
-        <figure (click)="react('dislike')" >
+        <figure (click)="react('dislike')" [class.active]="article?.userReaction == 'dislike'">
             <img src="assets/img/Broken heart.png" alt="dislike">
         </figure>
     </div>

@@ -6,6 +6,7 @@ import { BlogService } from 'src/app/services/blog.service';
 import { ContentService } from 'src/app/services/content.service';
 import { LanguageService } from 'src/app/services/language.service';
 import { MetaService } from 'src/app/services/meta.service';
+import { ReactionsService } from 'src/app/services/reactions.service';
 
 @Component({
   selector: 'app-blog',
@@ -27,7 +28,8 @@ export class BlogComponent implements OnInit, OnDestroy {
     private blogService: BlogService,
     private languageService: LanguageService,
     private contentService: ContentService,
-    private readonly _metaService: MetaService
+    private readonly _metaService: MetaService,
+    private readonly _reactionsService: ReactionsService,
   ) { }
 
   async ngOnInit() {
@@ -44,12 +46,30 @@ export class BlogComponent implements OnInit, OnDestroy {
     this._metaService.setMetaTags(this.content.SEODescription, this.content.SEOKeywords)
     console.log(this.content);
     
-    this.getArticles()
+    await this.getArticles()
+    this.defineReactionsOnArticles()
   }
 
-  async getArticles() {
+  private async getArticles() {
     this.articles = await this.blogService.getArticles()
     this.firstArticles = this.articles?.splice(0, 4)
+    console.log("Got articles: ", [...this.firstArticles, ...this.articles]);
+  }
+
+  private defineReactionsOnArticles() {
+    let reactions = this._reactionsService.reactions
+    let articles = [...this.firstArticles, ...this.articles] 
+
+    for (let reaction of reactions) {
+      let index = articles.map(function(article) { return article.id; }).indexOf(reaction.article.id);
+      
+      if (index != -1) {
+        articles[index].userReaction = reaction.action
+      }
+    }
+
+    console.log("Defined reactions: ", articles);
+    
   }
 }
 

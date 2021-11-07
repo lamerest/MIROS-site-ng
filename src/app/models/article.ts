@@ -10,16 +10,23 @@ export interface IArticle {
   author: string;
   previewText: string;
   reactions: IReaction[];
-  locale: LanguageCode;
+  preview: IArticlePreview;
+  categories: ICategory[];
+  
   published_at: string;
   created_at: string;
   updated_at: string;
-  preview: IArticlePreview;
-  categories: ICategory[];
-  localizations: ILocalization[];
+  
+  
   SEODescription: string;
   SEOKeywords: string;
   SEOAuthor: string;
+  
+  localizations: ILocalization[];
+  locale: LanguageCode;
+
+  // Custom field for working with local storaged reactions
+  userReaction?: "like" | "dislike"
 }
 
 export interface IArticlePreview {
@@ -27,22 +34,28 @@ export interface IArticlePreview {
   name: string;
   alternativeText: string;
   caption: string;
+  
   width: number;
   height: number;
+  
   formats: {
     thumbnail: IPreviewFormat;
     large: IPreviewFormat;
     medium: IPreviewFormat;
     small: IPreviewFormat;
   };
+  
+  url: string;
+  previewUrl: string;
+  
   hash: string;
   ext: string;
   mime: string;
   size: number;
-  url: string;
-  previewUrl: string;
+  
   provider: string;
   provider_metadata: string;
+
   created_at: string;
   updated_at: string;
 }

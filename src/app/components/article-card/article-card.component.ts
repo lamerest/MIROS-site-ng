@@ -24,7 +24,7 @@ export class ArticleCardComponent implements OnInit {
 
   react(reaction: "like" | "dislike") {
     console.log(reaction);
-    
+    this.article.userReaction = reaction;
     this._reactionsService.addReaction(
       {
         article: this.article.id,

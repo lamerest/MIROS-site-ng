@@ -13,13 +13,10 @@ export class MetaService {
   setMetaTags(SEODescription: string, SEOKeywords: string, SEOAuthor = "Slava Vladykin") {    
     
     if(SEODescription != null) {
-      console.log("SEODescr exist");
       
       if (this._meta.getTag("name='description'") != null) {
-        console.log("Setting EXISTING tag");
         this._meta.updateTag({ name: "description", content: SEODescription })
       } else {
-        console.log("Setting NEW tag");
         this._meta.addTag({ name: "description", content: SEODescription })
       }
     }
