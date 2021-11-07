@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  width: 100vw;
+  width: calc(100vw - 40px);
   background-color: ghostwhite;
   display: flex;
   align-items: center;
