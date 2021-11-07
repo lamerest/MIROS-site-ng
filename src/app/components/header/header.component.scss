@@ -1,11 +1,13 @@
 .header {
   position: fixed;
-  width: calc(100% - 30px);
+  width: calc(100vw - 30px);
   background-color: ghostwhite;
   display: flex;
   align-items: center;
   height: 70px;
   top: 0;
+  // left: 0;
+  // right: 0;
   z-index: 11000;
   border-radius: 0 0 12px 12px;
   justify-content: space-between;
