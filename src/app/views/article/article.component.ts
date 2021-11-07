@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IArticle, LanguageCode } from 'src/app/models/blog';
+import { IArticle } from 'src/app/models/article';
+import { LanguageCode } from 'src/app/models/localization';
 import { BlogService } from 'src/app/services/blog.service';
 import { LanguageService } from 'src/app/services/language.service';
 import { MetaService } from 'src/app/services/meta.service';

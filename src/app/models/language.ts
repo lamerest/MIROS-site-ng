@@ -1,5 +1,5 @@
-import { LanguageCode } from "./blog";
 import { IImage } from "./image";
+import { LanguageCode } from "./localization";
 
 export interface ILanguage {
     id: number | string

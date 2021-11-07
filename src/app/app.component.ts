@@ -4,9 +4,9 @@ import {BehaviorSubject, Subscription} from 'rxjs';
 import {isPlatformBrowser} from '@angular/common';
 import { ContentService } from './services/content.service';
 import { IFooter, IHeader } from './models/components';
-import { LanguageCode } from './models/blog';
 import { LanguageService } from './services/language.service';
 import { Meta } from '@angular/platform-browser';
+import { LanguageCode } from './models/localization';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

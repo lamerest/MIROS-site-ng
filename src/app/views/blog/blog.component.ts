@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
-import { IArticle } from 'src/app/models/blog';
+import { IArticle } from 'src/app/models/article';
 import { IBlogPage } from 'src/app/models/pages';
 import { BlogService } from 'src/app/services/blog.service';
 import { ContentService } from 'src/app/services/content.service';

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from '../common/local-storage';
-import { IArticle, ICategory } from '../models/blog';
+import { IArticle } from '../models/article';
+import { ICategory } from '../models/catgory';
+import { IReaction } from '../models/reaction';
 import { BaseRequestService } from './base-request.service';
 
 @Injectable({
@@ -30,5 +32,9 @@ export class BlogService {
 
   async getCategoryById(categoryId: number): Promise<ICategory> {
     return await this.requestService.get(this.categoryUrl + "/" + categoryId)
+  }
+
+  async setReactionOnArticle(reaction: IReaction) {
+    return await this.requestService.post("/reactions", reaction)
   }
 }

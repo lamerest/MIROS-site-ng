@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from '../common/local-storage';
-import { LanguageCode } from '../models/blog';
 import { IFooter, IHeader } from '../models/components';
+import { LanguageCode } from '../models/localization';
 import { IAboutPage, IBlogPage, IMainPage, IMarathonsPage } from '../models/pages';
 import { BaseRequestService } from './base-request.service';
 

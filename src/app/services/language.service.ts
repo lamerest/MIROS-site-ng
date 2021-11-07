@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { LocalStorageService } from '../common/local-storage';
-import { LanguageCode } from '../models/blog';
+import { LanguageCode } from '../models/localization';
 
 @Injectable({
   providedIn: 'root'

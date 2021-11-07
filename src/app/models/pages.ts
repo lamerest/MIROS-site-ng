@@ -1,6 +1,6 @@
-import { ILocalization, LanguageCode } from "./blog";
 import { ICallBackPopup, ICommentary, IReview, IStat } from "./components";
 import { IImage } from "./image";
+import { ILocalization, LanguageCode } from "./localization";
 
 export interface IMainPage {
     id:	number | string

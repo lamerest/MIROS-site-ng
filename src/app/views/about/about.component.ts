@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { LanguageCode } from 'src/app/models/blog';
 import { IImage } from 'src/app/models/image';
+import { LanguageCode } from 'src/app/models/localization';
 import { IAboutPage } from 'src/app/models/pages';
 import { ContentService } from 'src/app/services/content.service';
 import { LanguageService } from 'src/app/services/language.service';

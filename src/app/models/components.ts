@@ -1,5 +1,5 @@
-import { ILocalization, LanguageCode } from "./blog";
 import { ILanguage } from "./language";
+import { ILocalization, LanguageCode } from "./localization";
 import { IVideo } from "./video";
 
 export interface ICallBackPopup {
