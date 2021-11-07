@@ -1,5 +1,14 @@
+import { IArticle } from "./article";
+
 export interface IReaction {
-    article: number // ID
-    user?: number // ID
+    id?: number 
+    article: IArticle
+    user?: any // Must be IUser
+    action: "like" | "dislike"
+}
+
+export interface IReactionPost {
+    article: number
+    user?: number
     action: "like" | "dislike"
 }

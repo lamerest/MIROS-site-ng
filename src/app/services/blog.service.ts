@@ -33,8 +33,4 @@ export class BlogService {
   async getCategoryById(categoryId: number): Promise<ICategory> {
     return await this.requestService.get(this.categoryUrl + "/" + categoryId)
   }
-
-  async setReactionOnArticle(reaction: IReaction) {
-    return await this.requestService.post("/reactions", reaction)
-  }
 }

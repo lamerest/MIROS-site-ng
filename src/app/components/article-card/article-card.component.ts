@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IArticle } from 'src/app/models/article';
+import { ReactionsService } from 'src/app/services/reactions.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -10,7 +11,9 @@ import { environment } from 'src/environments/environment';
 export class ArticleCardComponent implements OnInit {
   @Input() article!: IArticle;
 
-  constructor() { }
+  constructor(
+    private readonly _reactionsService: ReactionsService,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -19,11 +22,14 @@ export class ArticleCardComponent implements OnInit {
     return environment.serverUrl + article.preview.formats.small.url;
   }
 
-  like() {
-    console.log("like");
-  }
-
-  dislike() {
-    console.log("dislike");
+  react(reaction: "like" | "dislike") {
+    console.log(reaction);
+    
+    this._reactionsService.addReaction(
+      {
+        article: this.article.id,
+        action: reaction
+      }
+    )
   }
 }

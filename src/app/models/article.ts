@@ -1,5 +1,6 @@
 import { ICategory } from "./catgory";
 import { ILocalization, LanguageCode } from "./localization";
+import { IReaction } from "./reaction";
 
 export interface IArticle {
   id: number;
@@ -8,8 +9,7 @@ export interface IArticle {
   date: string;
   author: string;
   previewText: string;
-  likes: number;
-  dislikes: number;
+  reactions: IReaction[];
   locale: LanguageCode;
   published_at: string;
   created_at: string;
