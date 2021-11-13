@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IArticle } from 'src/app/models/blog';
+import { IArticle } from 'src/app/models/article';
+import { ReactionsService } from 'src/app/services/reactions.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -10,7 +11,8 @@ import { environment } from 'src/environments/environment';
 export class ArticleCardComponent implements OnInit {
   @Input() article!: IArticle;
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }

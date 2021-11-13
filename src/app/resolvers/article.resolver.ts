@@ -3,7 +3,7 @@ import {
   Resolve,
   ActivatedRouteSnapshot
 } from '@angular/router';
-import { IArticle } from '../models/blog';
+import { IArticle } from '../models/article';
 import { BlogService } from '../services/blog.service';
 
 @Injectable({

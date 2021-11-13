@@ -41,12 +41,15 @@ export class BaseRequestService {
     useDataWrapper: boolean
   ): Promise<any> {
     let body;
-
-    const headers = {
-      Authorization: `Bearer ${this.localStorage.getItem("accessToken")}` || "",
-      ...headersObj,
-    };
-
+    let headers: any = {}
+    
+    if (this.localStorage.getItem("accessToken")) {
+      headers = {
+        Authorization: `Bearer ${this.localStorage.getItem("accessToken") || ""}`,
+        ...headersObj,
+      };  
+    }
+    
     if (data) {
       headers["Content-Type"] = "application/json";
       body = data;

@@ -1,18 +1,25 @@
-<app-header></app-header>
 <section class="blog container">
-  <h1>Блог</h1>
+  <h1>{{ content.title }}</h1>
 
   <div class="blog__carousel-wrap carousel-wrap">
     <div class="carousel-header">
-      <h3>Последние статьи</h3>
-      <img src="assets/img/Arrow.png" alt="Articles" />
+      <h3>{{ content.lastArticles }}</h3>
+      <!-- <img src="assets/img/Arrow.png" alt="Articles" /> -->
     </div>
 
     <div class="blog__carousel carousel">
       <app-article-card 
-        *ngFor="let article of articles" 
+        *ngFor="let article of firstArticles" 
         [article]="article">
       </app-article-card>
     </div>
   </div>
+
+  <app-repeated-header [header]="content.articles"></app-repeated-header>
+
+  <section class="blog__articles-list container">
+    <app-articles-list
+      [articles]="articles"
+    ></app-articles-list>
+  </section>
 </section>

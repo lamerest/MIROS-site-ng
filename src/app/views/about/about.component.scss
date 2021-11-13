@@ -100,3 +100,16 @@
 .article__block > figure > img {
   width: 100%;
 }
+.article__carousel {
+  width: calc(100vw - 48px);
+
+  img {
+    height: 100%;
+    object-fit: cover !important;
+  }
+}
+.carousel {
+  &__cell {
+    height: 100%;
+  }
+}

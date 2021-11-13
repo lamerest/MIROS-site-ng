@@ -1,12 +1,10 @@
-<app-header class="header" [isHidden]="!isHeaderVisible"></app-header>
-
 <section>
   
-  <app-hero ></app-hero>
-  <app-about-section></app-about-section>
+  <app-hero [content]="content"></app-hero>
+  <app-about-section [content]="content"></app-about-section>
   
-  <app-feedback></app-feedback>
+  <app-feedback [content]="content?.review"></app-feedback>
   
-  <app-commentaries></app-commentaries>
+  <app-commentaries [content]="content?.commentaries" [header]="content?.commentariesBlockHeader"></app-commentaries>
 
 </section>

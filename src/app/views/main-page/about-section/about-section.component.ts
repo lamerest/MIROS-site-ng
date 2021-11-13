@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IMainPage } from 'src/app/models/pages';
 
 @Component({
   selector: 'app-about-section',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-section.component.scss']
 })
 export class AboutSectionComponent implements OnInit {
+  @Input() content!: IMainPage
 
   constructor() { }
 

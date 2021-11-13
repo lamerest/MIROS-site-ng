@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IHeader } from 'src/app/models/components';
+import { LanguageCode } from 'src/app/models/localization';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +10,26 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() isHidden = false
-  
-  constructor() { }
+  @Input() content!: IHeader
 
-  ngOnInit(): void {
+  lang: LanguageCode = LanguageCode.ru
+  LanguageCode = LanguageCode
+
+  isMobileMenuOpen = false
+  
+  constructor(
+    private languageService: LanguageService
+  ) { }
+
+  ngOnInit() {    
+    this.lang = this.languageService.getLanguage()
   }
 
+  changeLanguage() {
+    this.languageService.setLanguage(this.lang)
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen
+  }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IMainPage } from 'src/app/models/pages';
 
 @Component({
   selector: 'app-hero',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit {
+  @Input() content!: IMainPage
 
   constructor() { }
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ICommentary } from 'src/app/models/components';
 
 @Component({
   selector: 'app-commentaries',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./commentaries.component.scss']
 })
 export class CommentariesComponent implements OnInit {
+  @Input() content!: ICommentary[]
+  @Input() header!: string
 
   constructor() { }
 

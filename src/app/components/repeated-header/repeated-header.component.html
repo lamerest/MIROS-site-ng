@@ -1,0 +1,8 @@
+<div class="header-wrap">
+    <div *ngFor="let item of array" class="header-wrap__header">
+        <div class="dash dash-left"></div>
+        <h2 [class.main]="item === 1">{{ header }}</h2>
+        <div class="dash dash-right"></div>
+    </div>
+    
+</div>

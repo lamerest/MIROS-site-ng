@@ -11,7 +11,7 @@ import { RegisterComponent } from './views/register/register.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BlogComponent } from './views/blog/blog.component';
-import { ArticleComponent } from './views/blog/article/article.component';
+import { ArticleComponent } from './views/article/article.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { CommentariesComponent } from './components/commentaries/commentaries.component';
 import { HeroComponent } from './views/main-page/hero/hero.component';
@@ -23,6 +23,13 @@ import { ArticleResolver } from './resolvers/article.resolver';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { environment } from 'src/environments/environment';
 import { ArticleCardComponent } from './components/article-card/article-card.component';
+import { ArticlesListComponent } from './components/articles-list/articles-list.component';
+import { RepeatedHeaderComponent } from './components/repeated-header/repeated-header.component';
+import { FormsModule } from '@angular/forms';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { PlayerComponent } from './components/player/player.component';
+import { CallbackPopupComponent } from './components/callback-popup/callback-popup.component';
+import { ReactionsComponent } from './components/reactions/reactions.component';
 
 @NgModule({
   declarations: [
@@ -43,11 +50,18 @@ import { ArticleCardComponent } from './components/article-card/article-card.com
     HeroMarathonsComponent,
     CallbackComponent,
     ArticleCardComponent,
+    ArticlesListComponent,
+    RepeatedHeaderComponent,
+    PlayerComponent,
+    CallbackPopupComponent,
+    ReactionsComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
+    FormsModule,
+    IvyCarouselModule,
     MarkdownModule.forRoot(
       { 
         loader: HttpClient,
