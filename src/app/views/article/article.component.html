@@ -38,6 +38,10 @@
 
     <div class="article__footer">
         <span class="article__date">{{ article?.date }}</span>
+        <app-reactions
+          [article]="article"
+          [lightMode]="true"
+        ></app-reactions>
         <span class="article__author">{{ article?.author }}</span>
     </div>
 

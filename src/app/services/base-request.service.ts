@@ -49,7 +49,6 @@ export class BaseRequestService {
         ...headersObj,
       };  
     }
-    console.log(data);
     
     if (data) {
       headers["Content-Type"] = "application/json";
