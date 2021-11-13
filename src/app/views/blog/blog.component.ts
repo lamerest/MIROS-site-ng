@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IArticle } from 'src/app/models/article';
 import { IBlogPage } from 'src/app/models/pages';
@@ -22,6 +22,15 @@ export class BlogComponent implements OnInit, OnDestroy {
   langSubscription!: Subscription
   subscriber = { 
     next: () => this.getContent() 
+  }
+
+  innerWidth = null
+
+  @HostListener('window:resize', ['$event'])
+    onResize(event) {
+    this.innerWidth = window.innerWidth;
+    console.log(this.innerWidth);
+    this.setFirstArticles()
   }
 
   constructor(
@@ -52,7 +61,7 @@ export class BlogComponent implements OnInit, OnDestroy {
 
   private async getArticles() {
     this.articles = await this.blogService.getArticles()
-    this.firstArticles = this.articles?.splice(0, 4)
+    this.firstArticles = this.articles?.splice(0, 6)
     console.log("Got articles: ", [...this.firstArticles, ...this.articles]);
   }
 
@@ -69,6 +78,10 @@ export class BlogComponent implements OnInit, OnDestroy {
     }
 
     console.log("Defined reactions: ", articles);
+    
+  }
+
+  private setFirstArticles() {
     
   }
 }
