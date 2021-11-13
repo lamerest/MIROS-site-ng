@@ -21,9 +21,9 @@ export class ReactionsService {
     private readonly localStorage: LocalStorageService
   ) { }
 
-  async addReaction(reaction: IReactionPost) {
+  async addReaction(reaction: IReactionPost): Promise<boolean> {
     if (reaction == null) {
-      return;
+      return false;
     }
 
     if (this.reactions == null) {
@@ -38,19 +38,29 @@ export class ReactionsService {
       console.log("User already reacted on the article");
 
       if (tempReaction.action !== reaction.action) {
-        console.log("Reaction changed");
-        tempReaction = this.replaceReactionInLocalStorage(tempReaction.article.id)
-        return await this.updateReactionOnArticle(tempReaction.id, tempReaction);
+        try {
+          console.log("Reaction changed");
+          tempReaction = this.replaceReactionInLocalStorage(tempReaction.article.id)
+          await this.updateReactionOnArticle(tempReaction.id, tempReaction);
+          return true;
+        } catch (error) {
+          return false;
+        }
       } else {
-        return;
+        return false;
       }
     }
 
-    console.log("Creating new reaction");
-    let reactions = this.reactions
-    let newReaction = await this.setReactionOnArticle(reaction)
-    reactions.push(newReaction);
-    this.reactions = reactions;
+    try {
+      console.log("Creating new reaction");
+      let reactions = this.reactions
+      let newReaction = await this.setReactionOnArticle(reaction)
+      reactions.push(newReaction);
+      this.reactions = reactions;
+      return true
+    } catch (error) {
+      return false
+    }
   }
 
   private async setReactionOnArticle(reaction: IReactionPost): Promise<IReaction> {
