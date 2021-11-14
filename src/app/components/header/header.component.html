@@ -5,7 +5,11 @@
   <nav class="header__menu menu">
     <ul class="menu__list">
       <li class="menu__list-item">
-        <a routerLink="/" routerLinkActive="menu__list-item_active" class="menu__list-item" >
+        <a 
+          routerLink="/" 
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="menu__list-item_active" 
+          class="menu__list-item" >
           {{ content?.menu?.main }}
         </a>
       </li>
@@ -62,7 +66,12 @@
   <nav *ngIf="isMobileMenuOpen">
     <ul (click)="toggleMobileMenu()" class="menu__list">
       <li class="menu__list-item">
-        <a routerLink="/" routerLinkActive="menu__list-item_active" class="menu__list-item" >
+        <a 
+          routerLink="/" 
+          routerLinkActive="menu__list-item_active" 
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="menu__list-item" 
+        >
           {{ content?.menu?.main }}
         </a>
       </li>

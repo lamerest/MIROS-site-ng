@@ -57,11 +57,11 @@
     }
     .overlay {
         position: absolute;
-        bottom: 20px;
+        bottom: 0px;
         z-index: 100;
         left: 0;
         right: 0;
         height: 100px;
-        background: linear-gradient(transparent 0%, var(--primary-black) )
+        background: linear-gradient(transparent 0%, var(--primary-black) 80%)
     }
 }

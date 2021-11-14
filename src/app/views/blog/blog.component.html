@@ -2,17 +2,33 @@
   <h1>{{ content.title }}</h1>
 
   <div class="blog__carousel-wrap carousel-wrap">
+    
     <div class="carousel-header">
       <h3>{{ content.lastArticles }}</h3>
       <!-- <img src="assets/img/Arrow.png" alt="Articles" /> -->
     </div>
 
-    <div class="blog__carousel carousel">
+    <carousel
+        [height]="600"
+        [cellWidth]="innerWidth > 1600? 500 : 300"
+        [arrowsTheme]="'light'"
+        [arrowsOutside]="false"
+        [loop]="true"
+        class="blog__carousel carousel"
+      >
+        <div *ngFor="let article of firstArticles" class="carousel-cell">
+          <app-article-card 
+            [article]="article">
+          </app-article-card>
+        </div>
+      </carousel>
+
+    <!-- <div class="blog__carousel carousel">
       <app-article-card 
         *ngFor="let article of firstArticles" 
         [article]="article">
       </app-article-card>
-    </div>
+    </div> -->
   </div>
 
   <app-repeated-header [header]="content.articles"></app-repeated-header>
