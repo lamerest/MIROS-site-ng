@@ -1,7 +1,7 @@
 .section {
   max-width: 600px;
   margin: auto;
-  padding: 100px 15px 0px 15px;
+  padding: 100px 20px 0px;
 }
 .hero__button a {
   color: #282828;
@@ -52,6 +52,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &:last-of-type {
+    padding-bottom: 140px;
+  }
 }
 .article__block h2 {
   text-align: center;
