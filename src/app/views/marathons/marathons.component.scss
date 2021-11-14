@@ -1,18 +1,36 @@
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-bottom: -5px;
 
   &__text-block {
     padding: 50px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media screen and (max-width: 1024px) {
+      width: 80%;
+      margin: auto; 
+    }
+
+    @media screen and (max-width: 460px) {
+      width: 100%;
+      padding: 50px 20px; 
+    }
   }
 
   img {
     width: 100%;
     object-fit: contain;
+
+    @media screen and (max-width: 1024px) {
+      grid-row: 2;
+      
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -21,6 +39,7 @@
   justify-content: center;
   align-items: center;
   transition: 0.2s ease-out;
+  font-family: Raleway, sans-serif;
   
   &:hover {
     opacity: 0.5;
@@ -35,12 +54,13 @@
 
 /*REASONS*/
 .reasons {
-  display: flex;
-  // margin-bottom: -5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
     
   img {
-    width: 50%;
-    // object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   &__text-gray {
@@ -54,7 +74,6 @@
 
   &__text-block {
     padding: 40px 15px 0px 30px;
-    width: calc(50% - 45px);
     font-family: Raleway, sans-serif;
   }
 
@@ -67,10 +86,18 @@
       }
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 
 .text-block {
+
+  &__text-gray {
+    color: grey;
+  }
 
   &__block {
     margin-bottom: 60px;
@@ -210,12 +237,23 @@
     text-align: center;
     color: #f8f8ff;
     margin-bottom: 15px;
+
+    @media screen and (max-width: 1024px) {
+      width: 80%;
+    }
   }
 
   &__numbers-wrap {
+    font-family: Raleway, sans-serif;
     padding-top: 30px;
     display: flex;
     max-width: 600px;
+
+    @media screen and (max-width: 666px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 
@@ -227,6 +265,11 @@
     justify-content: start;
     align-items: center;
     text-align: center;
+
+    @media screen and (max-width: 666px) {
+      width: 250px;
+      margin: 0 auto 50px;
+    }
 
     h3 {
       font-style: normal;
@@ -279,6 +322,10 @@
     line-height: 107px;
     color: #c4c4c4;
 
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+
     &-left {
       transform: rotate(-90deg);
       left: -60px;
@@ -288,5 +335,9 @@
       transform: rotate(90deg);
       right: -60px;
     }
+  }
+
+  @media screen and (max-width: 400px) {
+    padding: 100px 20px;
   }
 }
