@@ -1,7 +1,7 @@
 .blog {
-    width: 100%;
-    padding-top: 100px;
-    overflow: hidden;
+    max-width: 1200px;
+    padding: 100px 24px 0;
+    margin: auto;
 
     &__articles-list {
         margin: auto;
@@ -12,6 +12,10 @@
 .carousel {
     &-wrap {
         padding: 40px 50px;
+
+        @media screen and (max-width: 768px) {
+            padding: 40px 0px;
+        }
     }
     &-header {
         width: 250px;

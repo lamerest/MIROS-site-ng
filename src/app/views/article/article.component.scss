@@ -19,6 +19,7 @@
         width: 100px;
         justify-content: space-between;
         list-style: none;
+        padding: 0;
 
         &-item {
             transition: ease-in-out 0.2s;
@@ -48,6 +49,11 @@
         &:hover {
             background-color: var(--primary-green);
         }
+
+        @media screen and (max-width: 450px) {
+            width: 70px;
+        }
+
         &-arrow {
             transform: rotate(90deg);
             object-fit: contain;
@@ -56,8 +62,14 @@
     }
     &__categories {
         padding: 20px 0;
+
         &-text {
             font-weight: 600;
+
+            @media screen and (max-width: 510px) {
+                display: block;
+                padding-bottom: 10px;
+            }
         }
     }
     &__category {
