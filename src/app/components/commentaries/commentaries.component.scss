@@ -20,25 +20,16 @@
     margin-left: -30px;
     height: unset;
   }
-}
 
-.feedback {
-  &__decoration {
-    position: absolute;
-    top: 25%;
-    height: 400px;
-    color: #c4c4c4;
-    z-index: -1;
-    filter: blur(2px);
-    width: unset;
-
-    &-left {
-      left: 50px;
-      transform: rotate(180deg);
-    }
-
-    &-right {
-      right: 50px;
+  &__swipe-icon {
+    display: none;
+    
+    @media (max-width: 768px) {
+      display: block;
+      margin: auto;
+      width: 80px;
+      opacity: 0.4;
+      transform: translateY(-120px);
     }
   }
 }

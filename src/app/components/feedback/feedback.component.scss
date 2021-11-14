@@ -66,12 +66,13 @@
 
   &__swipe-icon {
     display: none;
-    width: 100px;
-    margin: auto;
-    transform: translateY(-100px);
 
     @media (max-width: 768px) {
       display: block;
+      margin: auto;
+      width: 80px;
+      opacity: 0.4;
+      transform: translateY(-100px);
     }
   }
 
