@@ -28,7 +28,6 @@ import { RepeatedHeaderComponent } from './components/repeated-header/repeated-h
 import { FormsModule } from '@angular/forms';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { PlayerComponent } from './components/player/player.component';
-import { CallbackPopupComponent } from './components/callback-popup/callback-popup.component';
 import { ReactionsComponent } from './components/reactions/reactions.component';
 
 @NgModule({
@@ -53,7 +52,6 @@ import { ReactionsComponent } from './components/reactions/reactions.component';
     ArticlesListComponent,
     RepeatedHeaderComponent,
     PlayerComponent,
-    CallbackPopupComponent,
     ReactionsComponent,
   ],
   imports: [
