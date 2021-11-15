@@ -25,7 +25,7 @@ export class ReactionsComponent {
     let counter = this.article?.reactions.reduce((acc, cur) => cur.action === "like" ? ++acc : acc, 0); 
     
     // Calculates reactions from LocalStorage of current user 
-    let reactionFromLocal = this._reactionsService.reactions.find(reaction => reaction.article.id === this.article?.id)    
+    let reactionFromLocal = this._reactionsService.reactions?.find(reaction => reaction.article.id === this.article?.id)    
     if (reactionFromLocal != null && reactionFromLocal.action !== null && reactionFromLocal.action === "like") {
       counter++
     }
@@ -43,7 +43,7 @@ export class ReactionsComponent {
     let counter = this.article?.reactions.reduce((acc, cur) => cur.action === "dislike" ? ++acc : acc, 0); 
     
     // Calculates reactions from LocalStorage of current user 
-    let reactionFromLocal = this._reactionsService.reactions.find(reaction => reaction.article.id === this.article?.id)    
+    let reactionFromLocal = this._reactionsService.reactions?.find(reaction => reaction.article.id === this.article?.id)    
     if (reactionFromLocal != null && reactionFromLocal.action !== null && reactionFromLocal.action === "dislike") {
       ++counter
     }

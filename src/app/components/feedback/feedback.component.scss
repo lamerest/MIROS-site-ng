@@ -5,6 +5,7 @@
   background-size: 800px 600px;
   background-position: 0 0;
   display: flex;
+  overflow: hidden;
   justify-content: space-around;
 
   &__phone {

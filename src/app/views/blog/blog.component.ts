@@ -30,7 +30,6 @@ export class BlogComponent implements OnInit, OnDestroy {
     onResize(event) {
     this.innerWidth = window.innerWidth;
     console.log(this.innerWidth);
-    this.setFirstArticles()
   }
 
   constructor(
@@ -67,6 +66,11 @@ export class BlogComponent implements OnInit, OnDestroy {
 
   private defineReactionsOnArticles() {
     let reactions = this._reactionsService.reactions
+    
+    if (reactions == null) {
+      return;
+    }
+
     let articles = [...this.firstArticles, ...this.articles] 
 
     for (let reaction of reactions) {
@@ -76,13 +80,6 @@ export class BlogComponent implements OnInit, OnDestroy {
         articles[index].userReaction = reaction.action
       }
     }
-
-    console.log("Defined reactions: ", articles);
-    
-  }
-
-  private setFirstArticles() {
-    
   }
 }
 
