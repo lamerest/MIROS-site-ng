@@ -17,6 +17,7 @@ export interface IMainPage {
     aboutSecondTextBlock:	string
     aboutFirstTextBlock:	string
     aboutSubtitle:	string
+
     telegramBotHeader:	string
     telegramBotText:	string
     localizations?:	ILocalization[]
@@ -46,11 +47,16 @@ export interface IAboutPage {
     experienceHeader:	string
     experienceText:	string
     experienceImages?: IImage[]
+
     telegramBotHeader:	string
     telegramBotText:	string
     telegramBotImage:	IImage
+
+    supportPatreonText: string
+    
     contactsHeader:	string
     contactsText:	string
+
     localizations:	ILocalization[]
     locale: 	LanguageCode,
 

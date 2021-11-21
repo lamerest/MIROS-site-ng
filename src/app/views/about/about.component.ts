@@ -82,6 +82,8 @@ const standardContent: IAboutPage = {
     telegramBotText:	"Телеграм-бот, задача которого - составить сбалансированный и здоровый рацион через оценку энергетической ценности продукта",
     telegramBotImage:	{ url: "assets/img/Bot%20demo.png" },
 
+    supportPatreonText: "Поддежри нас на патреоне",
+
     contactsHeader:	"Контакты",
     contactsText:	"Мы открыты к сотрудничеству со специалистами в сфере спорта, психологии, диетологии и нутрициологии",
 
