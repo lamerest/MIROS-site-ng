@@ -138,12 +138,23 @@
     &-bot {
       list-style-image: url("../../../assets/img/Bot icon.png");
     }
+
     &-telegram {
       list-style-image: url("../../../assets/img/Tg\ icon.png");
     }
+
     &-instagram {
       list-style-image: url("../../../assets/img/Inst\ icon.png");
     }
+
+    &-patreon {
+      list-style-image: url("../../../assets/img/patreon.png");
+
+      &::marker {
+        transform: translateY(-4px);
+      }
+    }
+
     &::marker {
       width: 30px;
       height: 30px;
