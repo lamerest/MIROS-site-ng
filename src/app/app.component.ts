@@ -87,7 +87,7 @@ const standardFooter: IFooter = {
     id: 1,
     socialMediaHeader: "Наши соц. сети",
     contactsBlockHeader:	"Контакты",
-    contactsBlockPhone:	"+7 (900) 645 11 65",
+    contactsBlockPhone:	"",
     contactsBlockEmail:	"miros.platform@gmail.com",
     menu: {
       id: 1,
