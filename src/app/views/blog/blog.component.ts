@@ -15,21 +15,13 @@ import { ReactionsService } from 'src/app/services/reactions.service';
 })
 export class BlogComponent implements OnInit, OnDestroy {
   articles: IArticle[] = []
-  firstArticles: IArticle[] = []
+  // firstArticles: IArticle[] = []
 
   content: IBlogPage = standardContent
 
   langSubscription!: Subscription
   subscriber = { 
     next: () => this.getContent() 
-  }
-
-  innerWidth = null
-
-  @HostListener('window:resize', ['$event'])
-    onResize(event) {
-    this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth);
   }
 
   constructor(
@@ -60,8 +52,8 @@ export class BlogComponent implements OnInit, OnDestroy {
 
   private async getArticles() {
     this.articles = await this.blogService.getArticles()
-    this.firstArticles = this.articles?.splice(0, 6)
-    console.log("Got articles: ", [...this.firstArticles, ...this.articles]);
+    // this.firstArticles = this.articles?.splice(0, 6)
+    console.log("Got articles: ", this.articles);
   }
 
   private defineReactionsOnArticles() {
@@ -71,13 +63,13 @@ export class BlogComponent implements OnInit, OnDestroy {
       return;
     }
 
-    let articles = [...this.firstArticles, ...this.articles] 
+    // let articles = [...this.firstArticles, ...this.articles] 
 
     for (let reaction of reactions) {
-      let index = articles.map(function(article) { return article.id; }).indexOf(reaction.article.id);
+      let index = this.articles.map(function(article) { return article.id; }).indexOf(reaction.article.id);
       
       if (index != -1) {
-        articles[index].userReaction = reaction.action
+        this.articles[index].userReaction = reaction.action
       }
     }
   }
