@@ -5,6 +5,7 @@
   &__text-block {
     padding: 50px 0;
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     justify-content: center;
 
