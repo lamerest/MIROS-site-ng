@@ -44,7 +44,7 @@ export class BlogComponent implements OnInit, OnDestroy {
   async getContent() {
     this.content = await this.contentService.getBlogPage()
     this._metaService.setMetaTags(this.content.SEODescription, this.content.SEOKeywords)
-    console.log(this.content);
+    ;
     
     await this.getArticles()
     this.defineReactionsOnArticles()

@@ -10,9 +10,6 @@ export class CallbackService {
   constructor(private readonly _requestService: BaseRequestService) {}
 
   async postCallBack(callback: ICallBack) {
-    return await this._requestService.post(
-      environment.serverUrl + '/call-backs',
-      callback
-    );
+    return await this._requestService.post('/call-backs', callback);
   }
 }

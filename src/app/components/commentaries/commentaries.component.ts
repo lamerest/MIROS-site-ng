@@ -11,7 +11,7 @@ export class CommentariesComponent implements OnInit {
   @Input() header!: string
 
   get cellWidth() {
-    console.log(window.innerWidth);
+    ;
     
     return window.innerWidth < 636? 250 : 400
   }

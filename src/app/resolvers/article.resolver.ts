@@ -16,7 +16,7 @@ export class ArticleResolver implements Resolve<IArticle> {
   ) {}
 
   async resolve(route: ActivatedRouteSnapshot): Promise<IArticle> {
-    console.log(route.params.id);
+    ;
     return await this.blogService.getArticleById(route.params.id);
   }
 }

@@ -42,7 +42,7 @@ export class MarathonsComponent implements OnInit, OnDestroy {
   async getContent() {
     this.content = await this.contentService.getMarathonsPage();
     this._metaService.setMetaTags(this.content.SEODescription, this.content.SEOKeywords)
-    console.log(this.content);
+    ;
   }
 
   toggleModal() {

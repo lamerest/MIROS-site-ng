@@ -11,7 +11,7 @@ export class LanguageService {
   // langObserver: Observer<LanguageCode> = {
   //   next: (x) => x,
   //   error: x => x,
-  //   complete: () => console.log("complete")
+  //   complete: () => 
   // }
 
   lang = LanguageCode.standardLanguage
