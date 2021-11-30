@@ -27,7 +27,6 @@ export class ReactionsService {
     }
 
     if (this.reactions == null) {
-      console.log("Defined reactions in local storage");
       this.reactions = []
     }
 
