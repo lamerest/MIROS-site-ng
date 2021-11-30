@@ -124,7 +124,8 @@
   width: 100%;
 }
 .article__carousel {
-  width: calc(100vw - 48px);
+  width: 100vw;
+  overflow: hidden;
 
   img {
     height: 100%;

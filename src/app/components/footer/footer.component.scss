@@ -21,6 +21,10 @@
   &__social-media {
     & .footer__header {
       text-align: left;
+
+      @media screen and (max-width: 520px) {
+        text-align: center;
+      }
     }
   }
 
@@ -86,7 +90,10 @@
         border-bottom: 1px solid #444
       }
     }
-   
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   @media screen and (max-width: 1024px) {
@@ -101,10 +108,17 @@
     grid-template-rows: 60px 1fr 60px 1fr;
   }
 
-  @media screen and (max-width: 520px) {
-
+  @media screen and (max-width: 768px) {
     grid-template-areas: 
-    "menu"
+    "social contacts"
+    ". ."
+    "logo logo";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 60px 1fr;
+  }
+
+  @media screen and (max-width: 520px) {
+    grid-template-areas: 
     "social"
     "contacts"
     "logo";
@@ -112,11 +126,18 @@
     height: fit-content;
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: 1.1fr 1.5fr 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr 1fr;
   }
 }
 .social-media {
   grid-area: social;
+
+  &__list {
+    @media screen and (max-width: 520px) {
+      width: 115px;
+      margin: auto;
+    }
+  }
 
   &__item {
     position: relative;
@@ -159,6 +180,10 @@
       width: 30px;
       height: 30px;
     }
+
+    @media screen and (max-width: 520px) {
+      text-align: le;
+    }
   }
 }
 .contacts {
@@ -192,6 +217,7 @@
   }
 
   @media (max-width: 520px) {
-    text-align: left;
+    text-align: center;
+    padding-top: 50px;
   }
 }
