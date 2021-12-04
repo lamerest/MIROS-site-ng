@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { IReview } from 'src/app/models/components';
 
 @Component({
@@ -6,13 +6,10 @@ import { IReview } from 'src/app/models/components';
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.scss']
 })
-export class FeedbackComponent implements OnInit {
-  @Input() content: IReview
+export class FeedbackComponent {
+  content: IReview
 
   @ViewChildren("video") videos!: QueryList<ElementRef>;
  
   constructor() { }
-
-  ngOnInit(): void {
-  }
 }
