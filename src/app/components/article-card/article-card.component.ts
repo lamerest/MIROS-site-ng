@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IArticle } from 'src/app/models/article';
-import { ReactionsService } from 'src/app/services/reactions.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -15,6 +14,7 @@ export class ArticleCardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log(this.article)
   }
 
   getPreviewUrl(article: IArticle): string {
