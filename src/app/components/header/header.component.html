@@ -1,19 +1,20 @@
-<header [class.header-hidden]="isHidden" class="header card">
-  <div class="header__logo">
+<header [class.header-hidden]="isHidden" class="header card" >
+  <div class="header__logo" >
     <a routerLink="/"><img src="assets/img/MR%20black.png" alt="" /></a>
   </div>
-  <nav class="header__menu menu">
-    <ul class="menu__list">
-      <li class="menu__list-item">
+  <nav class="header__menu menu" >
+    <ul class="menu__list" >
+      <li class="menu__list-item" >
         <a 
           routerLink="/" 
           [routerLinkActiveOptions]="{ exact: true }"
           routerLinkActive="menu__list-item_active" 
-          class="menu__list-item" >
+          class="menu__list-item" 
+        >
           {{ content?.menu?.main }}
         </a>
       </li>
-      <li>
+      <li class="menu__list-item" >
         <a routerLink="/marathons" routerLinkActive="menu__list-item_active" class="menu__list-item" >{{
           content?.menu?.marathons
         }}</a>
