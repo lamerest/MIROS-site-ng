@@ -4,7 +4,6 @@ import {
   OnInit
 } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { IImage } from 'src/app/models/image';
 import { IMainPage } from 'src/app/models/pages';
 import { ContentService } from 'src/app/services/content.service';
 import { LanguageService } from 'src/app/services/language.service';
@@ -53,6 +52,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
   async changeLocalization() {
     this.content = await this.contentService.getMainPage();
     this._metaService.setMetaTags(this.content.SEODescription, this.content.SEOKeywords)
+    this.appendImageUrls()
   }
 
   appendImageUrls() {
