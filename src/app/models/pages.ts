@@ -3,31 +3,36 @@ import { IImage } from "./image";
 import { ILocalization, LanguageCode } from "./localization";
 
 export interface IMainPage {
-    id:	number | string
+    id:	number
     welcome:	string
     welcomeSubtitle:	string
     welcomeButton:	string
+    welcomeImage: IImage
+
     aboutHeader:	string
-    
-    review:	IReview
-
-    commentariesBlockHeader: string,
-    commentaries:	ICommentary[]
-
     aboutSecondTextBlock:	string
     aboutFirstTextBlock:	string
     aboutSubtitle:	string
-
+    aboutImage: IImage
+    
     telegramBotHeader:	string
     telegramBotText:	string
+    telegramBotImage: IImage
+    
+    review:	IReview
+    
+    commentariesBlockHeader: string,
+    commentaries:	ICommentary[]
+    
+    SEODescription?: string,
+    SEOKeywords?: string,
+    
     localizations?:	ILocalization[]
     locale:	LanguageCode
 
     created_at: string,
     updated_at: string,
 
-    SEODescription?: string,
-    SEOKeywords?: string,
 }
 
 export interface IAboutPage {

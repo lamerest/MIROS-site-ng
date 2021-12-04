@@ -24,11 +24,11 @@
           <p class="additional-text"><markdown [data]="content?.telegramBotText"></markdown></p>
         </div>
         <figure>
-          <img src="assets/img/Main%20polaroid%201.png" alt="">
+          <img [src]="content?.aboutImage?.url" alt="">
         </figure>
       </div>
       <div class="bot-block__wrapper">
-        <figure><img src="assets/img/Bot%20demo.png" alt=""></figure>
+        <figure><img [src]="content?.telegramBotImage?.url" alt="telegram bot demo"></figure>
         <div class="wrapper__text-block">
           <h3>{{ content?.telegramBotHeader }}</h3>
           <p>{{ content?.telegramBotText }}</p>
