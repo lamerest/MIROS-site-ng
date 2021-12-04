@@ -65,8 +65,9 @@ export class ArticleComponent implements OnInit, OnDestroy {
 
   private defineUserReactionOnArticle() {
     let reactions = this._reactionsService.reactions
-    let index = reactions.map(function(reaction) { return reaction.article.id; }).indexOf(this.article.id);
-    if (index != -1) {
+    let index = reactions?.map(function(reaction) { return reaction.article.id; }).indexOf(this.article.id);
+    
+    if (index != null && index != -1) {
       this.article.userReaction = reactions[index].action
     }
   }
