@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, ElementRef, Input, QueryList, ViewChildren } from '@angular/core';
 import { IReview } from 'src/app/models/components';
 
 @Component({
@@ -7,7 +7,7 @@ import { IReview } from 'src/app/models/components';
   styleUrls: ['./feedback.component.scss']
 })
 export class FeedbackComponent {
-  content: IReview
+  @Input() content: IReview
 
   @ViewChildren("video") videos!: QueryList<ElementRef>;
  

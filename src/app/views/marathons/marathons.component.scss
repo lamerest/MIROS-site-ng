@@ -103,6 +103,10 @@
   &__block {
     margin-bottom: 60px;
     padding: 0 40px;
+
+    @media (max-width: 400px) {
+      padding: 0;
+    }
   }
 
   &__text {
