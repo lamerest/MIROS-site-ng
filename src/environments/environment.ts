@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'https://admin.miros-platform.com'
+  serverUrl: 'http://134.0.119.122/'
 };
 
 /*
