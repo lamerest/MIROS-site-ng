@@ -1,4 +1,3 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, ElementRef, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -8,8 +7,8 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./player.component.scss']
 })
 export class PlayerComponent implements OnInit, OnChanges {
-  @Input() src = ""
-  @ViewChild('video') player!: ElementRef;
+  @Input() src: string
+  @ViewChild('video') player: ElementRef;
 
   isVideoPlaying = false
   
